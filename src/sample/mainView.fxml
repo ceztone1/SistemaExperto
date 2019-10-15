@@ -1,109 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<BorderPane fx:controller="sample.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #1976D2;" xmlns="http://javafx.com/javafx/8.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #1976D2;" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <top>
         <Label> </Label>
     </top>
     <center>
         <VBox spacing="10" VBox.vgrow="ALWAYS">
             <HBox alignment="CENTER" spacing="10">
-                <TableView fx:id="tblUSU" VBox.vgrow="ALWAYS" >
+                <TableView fx:id="tblUSU" VBox.vgrow="ALWAYS">
                 <columns>
-                    <TableColumn text="Key" prefWidth="30">
+                    <TableColumn prefWidth="30" text="Key">
                         <cellValueFactory>
-                            <PropertyValueFactory property="key"></PropertyValueFactory>
+                            <PropertyValueFactory property="key" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn  text="ant1" prefWidth="90">
+                    <TableColumn prefWidth="90" text="ant1">
                         <cellValueFactory>
-                            <PropertyValueFactory property="ant1"></PropertyValueFactory>
+                            <PropertyValueFactory property="ant1" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn  text="ant2" prefWidth="90">
+                    <TableColumn prefWidth="90" text="ant2">
                         <cellValueFactory>
-                            <PropertyValueFactory property="ant2"></PropertyValueFactory>
+                            <PropertyValueFactory property="ant2" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn  text="ant3" prefWidth="90">
+                    <TableColumn prefWidth="90" text="ant3">
                         <cellValueFactory>
-                            <PropertyValueFactory property="ant3"></PropertyValueFactory>
+                            <PropertyValueFactory property="ant3" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn  text="ant4" prefWidth="90">
+                    <TableColumn prefWidth="90" text="ant4">
                         <cellValueFactory>
-                            <PropertyValueFactory property="ant4"></PropertyValueFactory>
+                            <PropertyValueFactory property="ant4" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn  text="ant5" prefWidth="90">
+                    <TableColumn prefWidth="90" text="ant5">
                         <cellValueFactory>
-                            <PropertyValueFactory property="ant5"></PropertyValueFactory>
+                            <PropertyValueFactory property="ant5" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn  text="ant6" prefWidth="90">
+                    <TableColumn prefWidth="90" text="ant6">
                         <cellValueFactory>
-                            <PropertyValueFactory property="ant6"></PropertyValueFactory>
+                            <PropertyValueFactory property="ant6" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn  text="ant7" prefWidth="90">
+                    <TableColumn prefWidth="90" text="ant7">
                         <cellValueFactory>
-                            <PropertyValueFactory property="ant7"></PropertyValueFactory>
+                            <PropertyValueFactory property="ant7" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn  text="ant8" prefWidth="90">
+                    <TableColumn prefWidth="90" text="ant8">
                         <cellValueFactory>
-                            <PropertyValueFactory property="ant8"></PropertyValueFactory>
+                            <PropertyValueFactory property="ant8" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn  text="ant9" prefWidth="90">
+                    <TableColumn prefWidth="90" text="ant9">
                         <cellValueFactory>
-                            <PropertyValueFactory property="ant9"></PropertyValueFactory>
+                            <PropertyValueFactory property="ant9" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn  text="ant10" prefWidth="90">
+                    <TableColumn prefWidth="90" text="ant10">
                         <cellValueFactory>
-                            <PropertyValueFactory property="ant10"></PropertyValueFactory>
+                            <PropertyValueFactory property="ant10" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn  text="Cons" prefWidth="100">
+                    <TableColumn prefWidth="100" text="Cons">
                         <cellValueFactory>
-                            <PropertyValueFactory property="cons"></PropertyValueFactory>
+                            <PropertyValueFactory property="cons" />
                         </cellValueFactory>
                     </TableColumn>
                 </columns>
                 <tooltip>
-                    <Tooltip text="Presione dos veces el regis"></Tooltip>
+                    <Tooltip text="Presione dos veces el regis" />
                 </tooltip>
             </TableView>
                 <VBox alignment="CENTER" spacing="10">
 
-                    <JFXTextField layoutX="687.0" layoutY="103.0" prefHeight="99.0" prefWidth="286.0" />
+                    <JFXTextField fx:id="txtADD" layoutX="687.0" layoutY="103.0" prefHeight="99.0" prefWidth="286.0" />
                     <HBox alignment="CENTER" spacing="10">
-                        <JFXButton buttonType="RAISED" fx:id="btnADD" layoutX="680.0" layoutY="224.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC; -fx-background-radius: 20" text="ADD" />
-                        <JFXButton buttonType="RAISED" fx:id="btnEDIT" layoutX="830.0" layoutY="224.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;  -fx-background-radius: 20" text="EDIT" />
+                        <JFXButton fx:id="btnADD" buttonType="RAISED" layoutX="680.0" layoutY="224.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC; -fx-background-radius: 20" text="ADD" />
+                        <JFXButton fx:id="btnEDIT" buttonType="RAISED" layoutX="830.0" layoutY="224.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;  -fx-background-radius: 20" text="EDIT" />
 
                     </HBox>
 
                     <JFXTextField layoutX="687.0" layoutY="303.0" prefHeight="99.0" prefWidth="286.0" />
 
 
-                    <JFXButton buttonType="RAISED" fx:id="btnSEARCH" layoutX="680.0" layoutY="419.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;  -fx-background-radius: 20" text="SEARCH" />
+                    <JFXButton fx:id="btnSEARCH" buttonType="RAISED" layoutX="680.0" layoutY="419.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;  -fx-background-radius: 20" text="SEARCH" />
 
                 </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <JFXButton fx:id="btnOR" buttonType="RAISED" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC; -fx-background-radius: 20" text="V">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnAND" buttonType="RAISED" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC; -fx-background-radius: 20" text="^">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnCOND" buttonType="RAISED" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC; -fx-background-radius: 20" text="-&gt;">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btnNEG" buttonType="RAISED" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC; -fx-background-radius: 20" text="¬">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></JFXButton>
+               </children>
+            </VBox>
 
             </HBox>
             <HBox alignment="CENTER" spacing="10">
 
-                <JFXButton buttonType="RAISED" fx:id="btnDELETE" layoutX="23.0" layoutY="624.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;  -fx-background-radius: 20" text="DELETE" />
+                <JFXButton fx:id="btnDELETE" buttonType="RAISED" layoutX="23.0" layoutY="624.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;  -fx-background-radius: 20" text="DELETE" />
             </HBox>
 
         </VBox>
