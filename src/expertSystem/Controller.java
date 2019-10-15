@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     @FXML
-    JFXButton btnADD,btnDELETE,btnEDIT,btnSEARCH,btnAND,btnCOND,btnOR,btnNEG;
+    JFXButton btnADD,btnDELETE,btnEDIT,btnSEARCH,btnOR,btnNEG;
     @FXML
     JFXTextField txtADD,txtSEARCH;
     @FXML
@@ -33,9 +33,9 @@ public class Controller implements Initializable {
         btnDELETE.setOnAction(handler);
         btnEDIT.setOnAction(handler);
         btnSEARCH.setOnAction(handler);
-        btnAND.setOnAction(handler);
+
         btnOR.setOnAction(handler);
-        btnCOND.setOnAction(handler);
+
         btnNEG.setOnAction(handler);
        try {
             tblcb.setItems(ofmKB.readSequentially());
@@ -72,19 +72,9 @@ public class Controller implements Initializable {
             {
 
             }
-            if(event.getSource()==btnOR)
-            {
-                txtADD.setText(txtADD.getText()+"V");
+            if(event.getSource()==btnOR) {
+                txtADD.setText(txtADD.getText() + "V");
 
-
-            }
-            if(event.getSource()==btnAND)
-            {
-                txtADD.setText(txtADD.getText()+"^");
-            }
-            if(event.getSource()==btnCOND)
-            {
-                txtADD.setText(txtADD.getText()+"->");
             }
             if(event.getSource()==btnNEG)
             {
