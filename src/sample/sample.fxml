@@ -27,11 +27,11 @@
                 <TableColumn maxWidth="100.0" prefWidth="50.0" text="ULT" />
             </columns>
         </TableView>
-        <JFXButton buttonType="RAISED" layoutX="23.0" layoutY="624.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;" text="DELETE" />
+        <JFXButton buttonType="RAISED" fx:id="btnDELETE" layoutX="23.0" layoutY="624.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;" text="DELETE" />
         <JFXTextField layoutX="687.0" layoutY="103.0" prefHeight="99.0" prefWidth="286.0" />
         <JFXTextField layoutX="687.0" layoutY="303.0" prefHeight="99.0" prefWidth="286.0" />
-        <JFXButton buttonType="RAISED" layoutX="680.0" layoutY="224.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;" text="ADD" />
-        <JFXButton buttonType="RAISED" layoutX="830.0" layoutY="224.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;" text="EDIT" />
-        <JFXButton buttonType="RAISED" layoutX="680.0" layoutY="419.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;" text="SEARCH" />
+        <JFXButton buttonType="RAISED" fx:id="btnADD" layoutX="680.0" layoutY="224.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;" text="ADD" />
+        <JFXButton buttonType="RAISED" fx:id="btnEDIT" layoutX="830.0" layoutY="224.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;" text="EDIT" />
+        <JFXButton buttonType="RAISED" fx:id="btnSEARCH" layoutX="680.0" layoutY="419.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #B3E5FC;" text="SEARCH" />
     </children>
 </AnchorPane>
