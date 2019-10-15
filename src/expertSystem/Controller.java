@@ -7,15 +7,16 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+
+import static javafx.scene.paint.Color.WHITE;
 
 public class Controller implements Initializable {
     @FXML
@@ -39,10 +40,24 @@ public class Controller implements Initializable {
         btnNEG.setOnAction(handler);
        try {
             tblcb.setItems(oFILE_KB.readSequentially());
-
+            oFILE_KB.oFILE_I.readSequentially("indexMaster.bin");
+            System.out.println(oFILE_KB.oFILE_I.oTREE.pre_orden(oFILE_KB.oFILE_I.oTREE.root));
         } catch (IOException e) {
             e.printStackTrace();
         }
+        tblcb.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent e) {
+                if (e.isPrimaryButtonDown() && e.getClickCount() == 2) //MEHTOD FOR EDIT
+                {
+                    TDA_KnowledgeBase tda_knowledgeBase=tblcb.getSelectionModel().getSelectedItem();
+                    btnEDIT.setVisible(true);
+                    btnADD.setVisible(false);
+                    System.out.println("Edit "+tda_knowledgeBase.getKey());
+                }
+            }
+        });
+
     }
     EventHandler<ActionEvent> handler= new EventHandler<ActionEvent>() {
         @Override
@@ -53,6 +68,7 @@ public class Controller implements Initializable {
                     try {
                         int key =Integer.parseInt(Alert());
                         oFILE_KB.write(key,clause);
+                        txtADD.clear();
                     }
                     catch (Exception e){
                         Alert alert=new Alert(Alert.AlertType.ERROR);
@@ -64,10 +80,25 @@ public class Controller implements Initializable {
             if(event.getSource()==btnEDIT)
             {
 
+                //if edit has succefull then put visible the button ADD and no visible EDIT
+                btnADD.setVisible(true);
+                btnEDIT.setVisible(false);
             }
             if(event.getSource()==btnDELETE)
             {
+                if(tblcb.getSelectionModel().getSelectedIndex()>=0) {
+                    TDA_KnowledgeBase tda_knowledgeBase = (tblcb.getSelectionModel().getSelectedItem());
+                    Alert alert;
+                    alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle("Warning");
+                    alert.setHeaderText("Confirmar eliminación");
+                    alert.setContentText("¿Esta seguro de eliminar al usuario " + tda_knowledgeBase.getKey() + "?");
+                    Optional<ButtonType> option = alert.showAndWait();
+                    if (option.get() == ButtonType.OK) {
 
+                    } else if (option.get() == ButtonType.CANCEL) {
+                    }
+                }
             }
             if(event.getSource()==btnSEARCH)
             {
@@ -81,10 +112,17 @@ public class Controller implements Initializable {
             {
                 txtADD.setText(txtADD.getText()+"¬");
             }
-
+            try {
+                refreshTable();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     };
-
+    public void refreshTable() throws IOException {
+        tblcb.getItems().clear();
+        tblcb.setItems(oFILE_KB.readSequentially());
+    }
     public String Alert(){
         TextInputDialog dialog = new TextInputDialog("1");
         dialog.setTitle("Clause key");

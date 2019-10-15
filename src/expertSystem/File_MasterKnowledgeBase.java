@@ -52,6 +52,7 @@ public class File_MasterKnowledgeBase extends File {
                 oFILE.closeFile();
             }
     }
+
     long ap_actual,ap_final;
 
     public ObservableList<TDA_KnowledgeBase> readSequentially() throws IOException {

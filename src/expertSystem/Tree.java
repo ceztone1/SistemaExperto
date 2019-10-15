@@ -98,6 +98,7 @@ public class Tree {
     }
     public String pre_orden(Node nodo)
     {
+
         if(nodo!=null)
         {
             men=men+nodo.info.key+ " ";
