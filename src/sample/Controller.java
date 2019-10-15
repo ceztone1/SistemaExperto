@@ -26,7 +26,7 @@ public class Controller implements Initializable {
         public void handle(ActionEvent event) {
             if(event.getSource()==btnADD)
             {
-
+                System.out.println("");
             }
             if(event.getSource()==btnEDIT)
             {
