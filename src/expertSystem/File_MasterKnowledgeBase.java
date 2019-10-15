@@ -25,17 +25,19 @@ public class File_MasterKnowledgeBase extends File {
         StringBuffer buffer=null;
             if(ofile.openFile("MasterKnowledgeBase.bin","rw"))
             {
+                ofile.file.seek(ofile.file.length());
+                System.out.println("length   "+ofile.file.length());
                 ofile.file.writeInt(key);
 
                 String c[]=clause.split("V");
                 int cou=c.length;
 
-                if(cou<=10 && cou>1) {
+                if(cou<=7 && cou>1) {
                     System.out.println("si");
-                    ofile.file.seek(ofile.file.length());
+
                     for (int i = 0; i < 6; i++) {
                         System.out.println("ggg  "+i+"  have " +(i<(cou-1)?c[i]:"ya no")  +"  ");
-                        buffer=new StringBuffer((i<(cou-1)?c[i]:" "));
+                        buffer=new StringBuffer((i<(cou-1)?c[i]:""));
                         buffer.setLength(40);
 
                         ofile.file.writeChars(buffer.toString());
@@ -64,6 +66,7 @@ public class File_MasterKnowledgeBase extends File {
         TDA_KnowledgeBase tda_kb;
         if(ofile.openFile("MasterKnowledgeBase.bin","r"))
         {
+            System.out.println("length  read "+ofile.file.length());
             while ((ap_actual=ofile.file.getFilePointer())!=(ap_final=ofile.file.length()))
             {
                 int d=ofile.file.readInt();
@@ -72,7 +75,6 @@ public class File_MasterKnowledgeBase extends File {
                 registros.add(tda_kb);
             }
             ofile.closeFile();
-
         }
         return registros;
     }
