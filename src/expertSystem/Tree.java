@@ -7,14 +7,14 @@ public class Tree {
     {
         root=null;
     }
-    public boolean arbol_vacio()
+    public boolean emptyTree()
     {
         return root==null;
     }
     public void insert(TDA_Index dato)
     {
         Node ant,rec;
-        if(arbol_vacio())
+        if(emptyTree())
             root=new Node(dato);
         else
         {
@@ -38,7 +38,7 @@ public class Tree {
     {
         Node rec, ant;
 
-        if(!arbol_vacio())
+        if(!emptyTree())
         {
             rec=root;
             ant=rec;
@@ -64,7 +64,7 @@ public class Tree {
     {
         Node rec, ant;
 
-        if(!arbol_vacio())
+        if(!emptyTree())
         {
             rec=root;
             ant=rec;
@@ -122,7 +122,7 @@ public class Tree {
         int con=-1;
         if(search(dato))
         {
-            if(!arbol_vacio())
+            if(!emptyTree())
             {
                 if(root.info.key==dato)
                     return 0;

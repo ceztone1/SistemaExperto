@@ -24,7 +24,7 @@ public class Controller implements Initializable {
     JFXTextField txtADD,txtSEARCH;
     @FXML
     TableView<TDA_KnowledgeBase> tblcb;
-    File_MasterKnowledgeBase ofmKB=new File_MasterKnowledgeBase();
+    File_MasterKnowledgeBase oFILE_KB=new File_MasterKnowledgeBase();
 
 
     @Override
@@ -38,7 +38,8 @@ public class Controller implements Initializable {
 
         btnNEG.setOnAction(handler);
        try {
-            tblcb.setItems(ofmKB.readSequentially());
+            tblcb.setItems(oFILE_KB.readSequentially());
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -51,7 +52,7 @@ public class Controller implements Initializable {
                 String clause=txtADD.getText();
                     try {
                         int key =Integer.parseInt(Alert());
-                        ofmKB.write(key,clause);
+                        oFILE_KB.write(key,clause);
                     }
                     catch (Exception e){
                         Alert alert=new Alert(Alert.AlertType.ERROR);
