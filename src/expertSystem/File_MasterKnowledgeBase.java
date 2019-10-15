@@ -9,9 +9,9 @@ import java.util.Random;
 /*INFORMATION OF THE REGISTER
 
 4 bytes FOR int
-10 Strings of 40 characters
-1 string de 40 characters
-
+6 Strings (antecedent) of 40 characters
+1 string (consequent) de 40 characters
+row size = 284
 
 * */
 public class File_MasterKnowledgeBase extends File {
@@ -32,22 +32,24 @@ public class File_MasterKnowledgeBase extends File {
 
                 if(cou<=10 && cou>1) {
                     System.out.println("si");
-                    for (int i = 0; i < 10; i++) {
+                    ofile.file.seek(ofile.file.length());
+                    for (int i = 0; i < 6; i++) {
                         System.out.println("ggg  "+i+"  have " +(i<(cou-1)?c[i]:"ya no")  +"  ");
                         buffer=new StringBuffer((i<(cou-1)?c[i]:" "));
                         buffer.setLength(40);
+
                         ofile.file.writeChars(buffer.toString());
                         System.out.println("Si lo hice  "+i);
                     }
-                    System.out.println("El ultimo re" +c[cou-1]);
-                    buffer=new StringBuffer(c[cou]);
+                    System.out.println("El ultimo re    " +c[cou-1]);
+                    buffer=new StringBuffer(c[cou-1]);
                     buffer.setLength(40);
                     ofile.file.writeChars(buffer.toString());
                 }
                 else
                 {
 
-                    for (int i = 0; i <11 ; i++) {
+                    for (int i = 0; i <7 ; i++) {
                         System.out.println("entre  "+i);
                         buffer=new StringBuffer(i==0?clause:" ");
                         buffer.setLength(40);
@@ -64,9 +66,9 @@ public class File_MasterKnowledgeBase extends File {
         {
             while ((ap_actual=ofile.file.getFilePointer())!=(ap_final=ofile.file.length()))
             {
-
-                tda_kb=new TDA_KnowledgeBase(ofile.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars());
-                System.out.println("Si entre  key   "+tda_kb.getKey()+ "amt 1  "+ tda_kb.getAnt1());
+                int d=ofile.file.readInt();
+                tda_kb=new TDA_KnowledgeBase(d,readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars());
+                System.out.println("Si entre  key   "+tda_kb.getKey()+ "    amt 1  "+ tda_kb.getAnt1());
                 registros.add(tda_kb);
             }
             ofile.closeFile();
@@ -78,7 +80,7 @@ public class File_MasterKnowledgeBase extends File {
         char ante [] = new char[40],temp;
         for (int c = 0; c < ante.length; c++) {
             temp = ofile.file.readChar();
-            System.out.println("Tempo titne   "+c +"   r " +temp);
+            System.out.println("Tempo titne   "+c +"   ree -> " +temp);
             ante[c] = temp;
         }
         new String(ante).replace('\0',' ');

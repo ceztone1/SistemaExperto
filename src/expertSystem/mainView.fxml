@@ -57,26 +57,6 @@
                             <PropertyValueFactory property="ant6" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn prefWidth="90" text="ant7">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="ant7" />
-                        </cellValueFactory>
-                    </TableColumn>
-                    <TableColumn prefWidth="90" text="ant8">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="ant8" />
-                        </cellValueFactory>
-                    </TableColumn>
-                    <TableColumn prefWidth="90" text="ant9">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="ant9" />
-                        </cellValueFactory>
-                    </TableColumn>
-                    <TableColumn prefWidth="90" text="ant10">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="ant10" />
-                        </cellValueFactory>
-                    </TableColumn>
                     <TableColumn prefWidth="100" text="Cons">
                         <cellValueFactory>
                             <PropertyValueFactory property="cons" />

@@ -37,11 +37,11 @@ public class Controller implements Initializable {
         btnOR.setOnAction(handler);
         btnCOND.setOnAction(handler);
         btnNEG.setOnAction(handler);
-       /* try {
+       try {
             tblcb.setItems(ofmKB.readSequentially());
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
     EventHandler<ActionEvent> handler= new EventHandler<ActionEvent>() {
         @Override
