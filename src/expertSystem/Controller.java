@@ -40,6 +40,7 @@ public class Controller implements Initializable {
         btnNEG.setOnAction(handler);
        try {
             tblcb.setItems(oFILE_KB.readSequentially());
+            //oFILE_KB.readSecRandom(1);
             oFILE_KB.oFILE_I.readSequentially("indexMaster.bin");
             System.out.println(oFILE_KB.oFILE_I.oTREE.pre_orden(oFILE_KB.oFILE_I.oTREE.root));
         } catch (IOException e) {
@@ -86,16 +87,30 @@ public class Controller implements Initializable {
             }
             if(event.getSource()==btnDELETE)
             {
+                Node node;
                 if(tblcb.getSelectionModel().getSelectedIndex()>=0) {
                     TDA_KnowledgeBase tda_knowledgeBase = (tblcb.getSelectionModel().getSelectedItem());
                     Alert alert;
                     alert = new Alert(Alert.AlertType.CONFIRMATION);
-                    alert.setTitle("Warning");
-                    alert.setHeaderText("Confirmar eliminación");
-                    alert.setContentText("¿Esta seguro de eliminar al usuario " + tda_knowledgeBase.getKey() + "?");
+                    alert.setTitle("Advertisement");
+                    alert.setHeaderText("Delete confirm");
+                    alert.setContentText("Are you sure delete row " + tda_knowledgeBase.getKey() + "?");
                     Optional<ButtonType> option = alert.showAndWait();
                     if (option.get() == ButtonType.OK) {
+                        node=oFILE_KB.oFILE_I.oTREE.seaNode(tda_knowledgeBase.getKey());
 
+                        try {
+                            oFILE_KB.oFILE_I.oTREE.delete(node.info.getKey());
+                            oFILE_KB.oFILE_I.delete(node.info.getKey(),"indexMaster.bin");
+
+                            oFILE_KB.oFILE_I.oTREE.men="";
+                            System.out.println(oFILE_KB.oFILE_I.oTREE.pre_orden(oFILE_KB.oFILE_I.oTREE.root));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        //System.out.println(oFILE_KB.oFILE_I.oTREE.pre_orden(oFILE_KB.oFILE_I.oTREE.root));
+
+                        System.out.println("el nodo es  "+node.info.getKey()+ "  "+node.info.getPosition());
                     } else if (option.get() == ButtonType.CANCEL) {
                     }
                 }

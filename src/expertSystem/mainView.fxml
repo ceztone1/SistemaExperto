@@ -21,7 +21,7 @@
             <HBox alignment="CENTER" spacing="10">
                 <TableView fx:id="tblcb" VBox.vgrow="ALWAYS">
                 <columns>
-                    <TableColumn prefWidth="30" text="Key">
+                    <TableColumn prefWidth="60" text="Key">
                         <cellValueFactory>
                             <PropertyValueFactory property="key" />
                         </cellValueFactory>

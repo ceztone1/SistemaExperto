@@ -47,12 +47,16 @@ public class Tree {
                 while(rec!=null)
                 {
                     ant=rec;
-                    if(dato<rec.info.key)
-                        rec=rec.izq;
-                    else
-                        rec=rec.der;
+                    if(dato==ant.info.getKey())
+                        return true;
+                    else{
+                        if(dato<rec.info.getKey())
+                            rec=rec.izq;
+                        else
+                            rec=rec.der;
+                    }
                 }
-                if(dato==ant.info.key)
+                if(dato==ant.info.getKey())
                     return true;
                 else
                     return false;
@@ -63,7 +67,6 @@ public class Tree {
     public Node seaNode(int dato)
     {
         Node rec, ant;
-
         if(!emptyTree())
         {
             rec=root;
@@ -73,10 +76,14 @@ public class Tree {
                 while(rec!=null)
                 {
                     ant=rec;
-                    if(dato<rec.info.key)
-                        rec=rec.izq;
-                    else
-                        rec=rec.der;
+                    if(dato==ant.info.getKey())
+                        return ant;
+                    else {
+                        if (dato < rec.info.key)
+                            rec = rec.izq;
+                        else
+                            rec = rec.der;
+                    }
                 }
                 if(dato==ant.info.key)
                     return ant;

@@ -2,13 +2,15 @@ package expertSystem;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import java.io.FileNotFoundException;
 import java.io.IOException;
 /*INFORMATION OF THE REGISTER
 
 4 bytes FOR int
 6 Strings (antecedent) of 40 characters
 1 string (consequent) de 40 characters
-row size = 284
+row size = 564 bytes
 
 * */
 public class File_MasterKnowledgeBase extends File {
@@ -28,7 +30,7 @@ public class File_MasterKnowledgeBase extends File {
                 oFILE.file.writeInt(key);
                 String c[]=clause.split("V");
                 int cou=c.length;
-                long position=(size/284)+1;
+                long position=(size/564)+1;
                 if(cou<=7 && cou>1) {
                     for (int i = 0; i < 6; i++) {
                         buffer=new StringBuffer((i<(cou-1)?c[i]:""));
@@ -48,7 +50,7 @@ public class File_MasterKnowledgeBase extends File {
                     }
                 }
                 oTDA_I=new TDA_Index(key,(int)(position));
-                oFILE_I.write(oTDA_I,"indexMaster.bin");
+                oFILE_I.write(oTDA_I,"indexMaster.bin",0);
                 oFILE.closeFile();
             }
     }
@@ -61,8 +63,7 @@ public class File_MasterKnowledgeBase extends File {
         {
             while ((ap_actual=oFILE.file.getFilePointer())!=(ap_final=oFILE.file.length()))
             {
-                int d=oFILE.file.readInt();
-                tda_kb=new TDA_KnowledgeBase(d,readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars());
+                tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars());
                 registros.add(tda_kb);
             }
             oFILE.closeFile();
@@ -78,7 +79,19 @@ public class File_MasterKnowledgeBase extends File {
         new String(ante).replace('\0',' ');
         return String.valueOf(ante);
     }
-    public void readSecRandom(){
+    public void readSecRandom(int position) throws IOException {
+        long lreg,desplaza;
+        TDA_KnowledgeBase tda_kb;
+        if(oFILE.openFile("MasterKnowledgeBase.bin","r"))
+        {
+            tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars());
+            lreg=oFILE.file.getFilePointer();
+            desplaza=(position-1)*lreg;
+            oFILE.file.seek(desplaza);
+            tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars());
+            System.out.println("EL valor buscado en la posicion "+position+" es: "+tda_kb.getKey()+"  a  "+tda_kb.getAnt1()+"  c "+tda_kb.getCons());
+            oFILE.closeFile();
+        }
 
     }
     public void delete(){
