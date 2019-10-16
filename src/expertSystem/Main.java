@@ -10,6 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        try{
         Parent root = FXMLLoader.load(getClass().getResource("mainView.fxml"));
         root.getStylesheets().add("./CSS/css.css");
         primaryStage.setTitle("Expert system");
@@ -17,6 +18,12 @@ public class Main extends Application {
         primaryStage.setMaximized(true);
         primaryStage.setScene(scene);
         primaryStage.show();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+
     }
 
 

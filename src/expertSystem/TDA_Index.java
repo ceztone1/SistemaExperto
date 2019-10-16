@@ -8,7 +8,7 @@ public class TDA_Index {
         this.key = key;
         this.position = position;
     }
-    public TDA_Index(){}
+
     public int getKey() {
         return key;
     }

@@ -2,7 +2,7 @@ package expertSystem;
 
 public class TDA_KnowledgeBase {
     int key;
-    public TDA_KnowledgeBase(){}
+
     public TDA_KnowledgeBase(int key, String ant1, String ant2, String ant3, String ant4, String ant5, String ant6, String cons) {
         this.key = key;
         this.ant1 = ant1;

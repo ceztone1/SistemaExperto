@@ -5,8 +5,8 @@ import java.io.IOException;
 
 public class File_Index extends File {
     File oFILE=new File();
-    TDA_Index oTDA_I = new TDA_Index();
     Tree oTREE = new Tree();
+    TDA_Index oTDA_I=null;
 
     public void write(TDA_Index tda_index,String index,long position) throws IOException {
         if(oFILE.openFile(index,"rw"))
@@ -19,7 +19,7 @@ public class File_Index extends File {
     }
     public void readSequentially(String index) throws IOException {
         long ap_actual,ap_final;
-        TDA_Index oTDA_I=null;
+
         if(oFILE.openFile(index,"r"))
         {
             while ((ap_actual=oFILE.file.getFilePointer())!=(ap_final=oFILE.file.length()))
@@ -36,7 +36,6 @@ public class File_Index extends File {
     }
     public void delete(int key,String index) throws IOException {
         long ap_actual,ap_final, position;
-        TDA_Index oTDA_I=null;
         boolean b=true;
         if(oFILE.openFile(index,"r"))
         {

@@ -26,37 +26,37 @@
                             <PropertyValueFactory property="key" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn prefWidth="90" text="ant1">
+                    <TableColumn prefWidth="120" text="ant1">
                         <cellValueFactory>
                             <PropertyValueFactory property="ant1" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn prefWidth="90" text="ant2">
+                    <TableColumn prefWidth="120" text="ant2">
                         <cellValueFactory>
                             <PropertyValueFactory property="ant2" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn prefWidth="90" text="ant3">
+                    <TableColumn prefWidth="120" text="ant3">
                         <cellValueFactory>
                             <PropertyValueFactory property="ant3" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn prefWidth="90" text="ant4">
+                    <TableColumn prefWidth="120" text="ant4">
                         <cellValueFactory>
                             <PropertyValueFactory property="ant4" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn prefWidth="90" text="ant5">
+                    <TableColumn prefWidth="120" text="ant5">
                         <cellValueFactory>
                             <PropertyValueFactory property="ant5" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn prefWidth="90" text="ant6">
+                    <TableColumn prefWidth="120" text="ant6">
                         <cellValueFactory>
                             <PropertyValueFactory property="ant6" />
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn prefWidth="100" text="Cons">
+                    <TableColumn prefWidth="120" text="Cons">
                         <cellValueFactory>
                             <PropertyValueFactory property="cons" />
                         </cellValueFactory>
