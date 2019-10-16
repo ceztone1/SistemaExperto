@@ -44,7 +44,9 @@ public class Controller implements Initializable {
                 if (e.isPrimaryButtonDown() && e.getClickCount() == 2) //MEHTOD FOR EDIT
                 {
                     TDA_KnowledgeBase tda_knowledgeBase=tblcb.getSelectionModel().getSelectedItem();
-                    txtADD.setText(tda_knowledgeBase.getAnt1()+(tda_knowledgeBase.getAnt2().equals(" ")?" ":"V")+tda_knowledgeBase.getAnt2()+(tda_knowledgeBase.getAnt3().equals(" ")?" ":"V")+tda_knowledgeBase.getAnt3());
+                    System.out.println(tda_knowledgeBase.getAnt2()==null?"soy null":"no soy null");
+                    System.out.println("tiene ->"+tda_knowledgeBase.getAnt2()+"<-");
+                    txtADD.setText(tda_knowledgeBase.getAnt1()+"V"+tda_knowledgeBase.getAnt2()+"V"+tda_knowledgeBase.getAnt3()+"V"+tda_knowledgeBase.getAnt4()+"V"+tda_knowledgeBase.getAnt5()+"V"+tda_knowledgeBase.getAnt6()+"V"+tda_knowledgeBase.getCons());
                     btnEDIT.setVisible(true);
                     btnADD.setVisible(false);
                     System.out.println("Edit "+tda_knowledgeBase.getKey());
@@ -201,10 +203,11 @@ public class Controller implements Initializable {
                 Node node = oFILE_KB.oFILE_I.oTREE.seaNode(tda_knowledgeBase.getKey());
                 if (node != null) {
                     if (oFILE_KB.update(node, txtADD.getText())) {
-                        alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setContentText("Row (" + node.info.getKey() + ") update with success!");
+                        alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setContentText("Key (" + node.info.getKey() + ") update with success!");
                         alert.setTitle("Success");
                         alert.show();
+                        txtADD.clear();
                     }
                 } else {
                     alert = new Alert(Alert.AlertType.ERROR);
