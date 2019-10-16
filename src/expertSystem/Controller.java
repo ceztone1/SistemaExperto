@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -64,7 +65,9 @@ public class Controller implements Initializable {
         public void handle(ActionEvent event) {
             if(event.getSource()==btnADD)
             {
-                String clause=txtADD.getText();
+                if(!txtADD.getText().isEmpty())
+                {
+                    String clause=txtADD.getText();
                     try {
                         int key =Integer.parseInt(Alert());
                         oFILE_KB.write(key,clause);
@@ -75,7 +78,10 @@ public class Controller implements Initializable {
                         alert.setTitle("Error");
                         alert.setContentText("Already exists the key");
                         alert.show();
-                    }
+                     }
+                }else{
+                    JOptionPane.showMessageDialog(null,"clause is empty");
+                }
             }
             if(event.getSource()==btnEDIT)
             {

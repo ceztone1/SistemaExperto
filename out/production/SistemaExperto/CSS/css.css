@@ -1,0 +1,38 @@
+
+.jfx-text-field{
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: white;
+}
+.table-view {
+    -fx-base: #4682B4;
+    -fx-control-inner-background: #87CEFA;
+    -fx-background-color: #000080;
+    -fx-table-cell-border-color: #1E90FF;
+    -fx-table-header-border-color: #000000;
+    -fx-padding: 5;
+    -fx-font-size: 10pt;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #191970;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: #1E90FF;
+    -fx-border-color: #191970;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 11pt;
+    -fx-font-family: "arial";
+    -fx-text-fill: #0A0A2A;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
