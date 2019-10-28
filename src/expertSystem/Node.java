@@ -1,7 +1,7 @@
 package expertSystem;
 
 public class Node {
-    TDA_Index info;
+    public TDA_Index info;
     Node izq;
     Node der;
     public Node(TDA_Index I)

@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class File_Index extends File {
     File oFILE=new File();
-    Tree oTREE = new Tree();
+    public Tree oTREE = new Tree();
     TDA_Index oTDA_I=null;
 
     public void write(TDA_Index tda_index,String index,long position) throws IOException {

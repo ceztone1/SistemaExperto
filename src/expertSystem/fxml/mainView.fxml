@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.MenuItem?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<BorderPane  style="-fx-background-color: #1976D2;" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="expertSystem.controller.mainView">
+    <top>
+
+        <MenuBar nodeOrientation="RIGHT_TO_LEFT" style="-fx-background-color: TRANSPARENT; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.1), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 0; -fx-border-radius: 0; -fx-padding: 10; ">
+            <menus>
+                <Menu fx:id="mn1" style="-fx-background-color:#CBCFDA; -fx-background-radius: 10px; -fx-text-fill: #CBCFDA;">
+                    <graphic>
+                        <MaterialDesignIconView fill="black" glyphName="HELP_CIRCLE" glyphSize="20" />
+                    </graphic>
+                    <items>
+                        <MenuItem fx:id="mn1_1" text="About us">
+                            <graphic>
+                                <FontAwesomeIconView fill="chartreuse" glyphName="USERS" glyphSize="20" />
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <Menu fx:id="mn2" style="-fx-background-color:#CBCFDA; -fx-background-radius: 10px; -fx-text-fill: #CBCFDA;" text="Knowelde Base">
+                    <graphic>
+                        <FontAwesomeIconView fill="black" glyphName="CARET_DOWN" glyphSize="20" />
+                    </graphic>
+                    <items>
+                        <MenuItem fx:id="mn2_1" text="Add">
+                            <graphic>
+                                <FontAwesomeIconView fill="green" glyphName="PLUS" glyphSize="20" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mn2_2" text="Show">
+                            <graphic>
+                                <FontAwesomeIconView fill="yellow" glyphName="TELEVISION" glyphSize="20" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mn2_3" text="Update">
+                            <graphic>
+                                <FontAwesomeIconView fill="blue" glyphName="EDIT" glyphSize="20" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mn2_4" text="Delete">
+                            <graphic>
+                                <FontAwesomeIconView fill="red" glyphName="TRASH" glyphSize="20" />
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </Menu>
+
+
+                <Menu fx:id="mn3" style="-fx-background-color:#CBCFDA; -fx-background-radius: 10px; -fx-text-fill: #CBCFDA;" text="Domains">
+                    <graphic>
+                        <FontAwesomeIconView fill="black" glyphName="CARET_DOWN" glyphSize="20" />
+                    </graphic>
+                    <items>
+                        <MenuItem fx:id="mn3_1" text="Add">
+                            <graphic>
+                                <FontAwesomeIconView fill="green" glyphName="PLUS" glyphSize="20" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mn3_2" text="Show">
+                            <graphic>
+                                <FontAwesomeIconView fill="yellow" glyphName="TELEVISION" glyphSize="20" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mn3_3" text="Update">
+                            <graphic>
+                                <FontAwesomeIconView fill="blue" glyphName="EDIT" glyphSize="20" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mn3_4" text="Delete">
+                            <graphic>
+                                <FontAwesomeIconView fill="red" glyphName="TRASH" glyphSize="20" />
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </Menu>
+
+                <Menu fx:id="mn4" style="-fx-background-color:#CBCFDA; -fx-background-radius: 10px; -fx-text-fill: #CBCFDA;" text="Infer">
+                    <graphic>
+                        <FontAwesomeIconView fill="black" glyphName="CARET_DOWN" glyphSize="20" />
+                    </graphic>
+                    <items>
+                        <MenuItem fx:id="mn4_1" text="forward chain">
+                            <graphic>
+                                <FontAwesomeIconView fill="green" glyphName="ARROW_RIGHT" glyphSize="20" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="mn4_2" text="backward chain">
+                            <graphic>
+                                <FontAwesomeIconView fill="yellow" glyphName="ARROW_LEFT" glyphSize="20" />
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </Menu>
+
+            </menus>
+        </MenuBar>
+
+    </top>
+    <center>
+
+        <AnchorPane>
+            <children>
+                <StackPane layoutX="0.0" layoutY="0.0" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+                    <children>
+                        <VBox fx:id="vbKB" visible="true">
+                            <fx:include fx:id="knowledgeBase" source="knowledgeBase.fxml"></fx:include>
+                        </VBox>
+                       <!-- <VBox fx:id="VBP" visible="false">
+                            <fx:include fx:id="producto" source="productos_Layout.fxml"></fx:include>
+                        </VBox>
+                        <VBox fx:id="VBL" visible="false">
+                            <fx:include fx:id="cliente" source="cliente_Layout.fxml"></fx:include>
+                        </VBox>
+                        <VBox fx:id="VBI" visible="false">
+                            <fx:include fx:id="inventario" source="inventario_Layout.fxml"></fx:include>
+                        </VBox>
+                        <VBox fx:id="VBC" visible="false">
+                            <fx:include fx:id="configuracion" source="configuracion_Layout.fxml"></fx:include>
+                        </VBox>
+                        <VBox fx:id="VBR" visible="false">
+                            <fx:include fx:id="corte" source="corte_Layout.fxml"></fx:include>
+                        </VBox>-->
+                    </children>
+                </StackPane>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

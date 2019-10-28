@@ -1,8 +1,10 @@
-package expertSystem;
+package expertSystem.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import expertSystem.File_MasterKnowledgeBase;
+import expertSystem.Node;
+import expertSystem.TDA_KnowledgeBase;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,7 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
+import javafx.*;
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
@@ -19,7 +21,7 @@ import java.util.ResourceBundle;
 
 import static javafx.scene.paint.Color.WHITE;
 
-public class Controller implements Initializable {
+public class knowledgeBase implements Initializable {
     @FXML
     JFXButton btnADD,btnDELETE,btnEDIT,btnSEARCH,btnOR,btnNEG;
     @FXML
@@ -162,6 +164,12 @@ public class Controller implements Initializable {
                 System.out.println("el nodo es  "+node.info.getKey()+ "  "+node.info.getPosition());
             } else if (option.get() == ButtonType.CANCEL) {
             }
+        }
+        else {
+            alert=new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Select a item ");
+            alert.setTitle("Warning");
+            alert.show();
         }
     }
     public void insert()

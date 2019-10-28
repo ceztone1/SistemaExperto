@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         try{
-        Parent root = FXMLLoader.load(getClass().getResource("mainView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/mainView.fxml"));
         root.getStylesheets().add("./CSS/css.css");
         primaryStage.setTitle("Expert system");
         Scene scene=new Scene(root);

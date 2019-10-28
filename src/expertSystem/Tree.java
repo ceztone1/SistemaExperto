@@ -1,8 +1,8 @@
 package expertSystem;
 
 public class Tree {
-    Node root;
-    String men="";
+    public Node root;
+    public String men="";
     public Tree()
     {
         root=null;
@@ -292,7 +292,7 @@ public class Tree {
                 }
                 else
                 {
-                    Node rem=NodoR(rec);
+                    Node rem=NodeR(rec);
                     if(rec==root)
                         root=rem;
                     else
@@ -306,7 +306,7 @@ public class Tree {
         }
         return true;
     }
-    public Node NodoR(Node nodo)
+    public Node NodeR(Node nodo)
     {
         Node Rant, rem,rec;
         Rant=nodo;

@@ -15,7 +15,7 @@ row size = 564 bytes
 * */
 public class File_MasterKnowledgeBase extends File {
     TDA_Index oTDA_I;
-    File_Index oFILE_I =new File_Index();
+    public File_Index oFILE_I =new File_Index();
     File oFILE=new File();
     ObservableList<TDA_KnowledgeBase> registros = FXCollections.observableArrayList();
 
