@@ -1,31 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bf6d255-0216-46b2-973e-0fec9f8262c2" name="Default" comment="Update all 100% Knowledge Base complete by QUIQUE">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/fontawesomefx_8_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/expertSystem/controller/mainView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/expertSystem/fxml/knowledgeBase.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/expertSystem/fxml/mainView.fxml" afterDir="false" />
+    <list default="true" id="4bf6d255-0216-46b2-973e-0fec9f8262c2" name="Default" comment="Update GUI FINAL Knowledge Base complete by QUIQUE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterKnowledgeBase.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MasterKnowledgeBase.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaExperto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaExperto.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexMaster.bin" beforeDir="false" afterPath="$PROJECT_DIR$/indexMaster.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/Controller$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/Controller$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/File_Index.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/File_Index.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/File_MasterKnowledgeBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/File_MasterKnowledgeBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/Tree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/mainView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expertSystem/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expertSystem/controller/knowledgeBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expertSystem/File_Index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expertSystem/File_Index.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expertSystem/File_MasterKnowledgeBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expertSystem/File_MasterKnowledgeBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expertSystem/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expertSystem/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expertSystem/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expertSystem/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expertSystem/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expertSystem/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expertSystem/mainView.fxml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/expertSystem/fxml/mainView.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+            <state relative-caret-position="153">
+              <caret line="36" column="28" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -58,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/mainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="469">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -196,7 +173,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="2" />
     <option name="width" value="1374" />
@@ -250,7 +227,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572241355007" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572241659488" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/JAR/fontawesomefx-8.9.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -346,7 +323,7 @@
       <workItem from="1571229961002" duration="11176000" />
       <workItem from="1571718072829" duration="1138000" />
       <workItem from="1571858534191" duration="1501000" />
-      <workItem from="1572213872941" duration="7108000" />
+      <workItem from="1572213872941" duration="7635000" />
     </task>
     <task id="LOCAL-00001" summary="Update all 90% complete by QUIQUE">
       <created>1571233115885</created>
@@ -362,17 +339,23 @@
       <option name="project" value="LOCAL" />
       <updated>1571236491994</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update GUI FINAL Knowledge Base complete by QUIQUE">
+      <created>1572241407392</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572241407392</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27660000" />
+    <option name="totallyTimeSpent" value="28187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1374" height="733" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20471281" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20471281" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -410,7 +393,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update all 90% complete by QUIQUE" />
     <MESSAGE value="Update all 100% Knowledge Base complete by QUIQUE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update all 100% Knowledge Base complete by QUIQUE" />
+    <MESSAGE value="Update GUI FINAL Knowledge Base complete by QUIQUE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update GUI FINAL Knowledge Base complete by QUIQUE" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/expertSystem/TDA_Index.java">
@@ -490,15 +474,15 @@
     <entry file="file://$PROJECT_DIR$/src/expertSystem/fxml/mainView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+        <state relative-caret-position="153">
+          <caret line="36" column="28" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/mainView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="469">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
