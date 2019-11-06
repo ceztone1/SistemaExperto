@@ -3,7 +3,7 @@ package expertSystem;
 public class TDA_KnowledgeBase {
     int key;
 
-    public TDA_KnowledgeBase(int key, String ant1, String ant2, String ant3, String ant4, String ant5, String ant6, String cons) {
+    public TDA_KnowledgeBase(int key, String ant1, String ant2, String ant3, String ant4, String ant5, String ant6, String cons,boolean gui) {
         this.key = key;
         this.ant1 = ant1;
         this.ant2 = ant2;
@@ -13,10 +13,21 @@ public class TDA_KnowledgeBase {
         this.ant6 = ant6;
 
         this.cons = cons;
+        this.gui=gui;
     }
 
     String ant1,ant2,ant3,ant4,ant5,ant6;
     String cons;
+
+    public boolean isGui() {
+        return gui;
+    }
+
+    public void setGui(boolean gui) {
+        this.gui = gui;
+    }
+
+    boolean gui;
     public int getKey() {
         return key;
     }

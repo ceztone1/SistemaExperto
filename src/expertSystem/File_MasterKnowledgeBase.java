@@ -10,7 +10,8 @@ import java.io.IOException;
 4 bytes FOR int
 6 Strings (antecedent) of 40 characters
 1 string (consequent) de 40 characters
-row size = 564 bytes
+1 boolean (gui) normally is  false
+row size = 565 bytes
 
 * */
 public class File_MasterKnowledgeBase extends File {
@@ -19,7 +20,7 @@ public class File_MasterKnowledgeBase extends File {
     File oFILE=new File();
     ObservableList<TDA_KnowledgeBase> registros = FXCollections.observableArrayList();
 
-    public void write (int key,String clause) throws IOException {
+    public void write (int key,String []c,boolean gui) throws IOException {
 
         StringBuffer buffer=null;
             if(oFILE.openFile("MasterKnowledgeBase.bin","rw"))
@@ -27,33 +28,36 @@ public class File_MasterKnowledgeBase extends File {
                 long size=oFILE.file.length();
                 oFILE.file.seek(size);
                 oFILE.file.writeInt(key);
-                String c[]=clause.split("V");
+               // String c[]=clause.split("V");
                 int cou=c.length;
-                long position=(size/564)+1;
+                long position=(size/565)+1;
                 if(cou<=7 && cou>1) {
                     for (int i = 0; i < 6; i++) {
-                        buffer=new StringBuffer((i<(cou-1)?c[i]:" "));
+                        //System.out.println("si qui  "+c[i]);
+                        buffer=new StringBuffer((i<(cou-1)?(c[i]==null?" ":c[i]):" "));
                         buffer.setLength(40);
                         oFILE.file.writeChars(buffer.toString());
                     }
-                    buffer=new StringBuffer(c[cou-1]);
+                    //System.out.println("si aqui   d  "+c[cou-1]);
+                    buffer=new StringBuffer(c[cou-1]==null?" ":c[cou-1]);
                     buffer.setLength(40);
                     oFILE.file.writeChars(buffer.toString());
                 }
-                else
+               /* else
                 {
                     for (int i = 0; i <7 ; i++) {
-                        buffer=new StringBuffer(i==0?clause:" ");
+                        buffer=new StringBuffer(i==0?c[0]:" ");
                         buffer.setLength(40);
                         oFILE.file.writeChars(buffer.toString());
                     }
-                }
+                }*/
+                oFILE.file.writeBoolean(gui);
+                //System.out.println("Escribi gui   "+gui);
                 oTDA_I=new TDA_Index(key,(int)(position));
                 oFILE_I.write(oTDA_I,"indexMaster.bin",0);
                 oFILE.closeFile();
             }
     }
-
     long ap_actual,ap_final;
 
     public ObservableList<TDA_KnowledgeBase> readSequentially() throws IOException {
@@ -62,7 +66,7 @@ public class File_MasterKnowledgeBase extends File {
         {
             while ((ap_actual=oFILE.file.getFilePointer())!=(ap_final=oFILE.file.length()))
             {
-                tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars());
+                tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),oFILE.file.readBoolean());
                 if(tda_kb.getKey()!=0)
                     registros.add(tda_kb);
             }
@@ -85,11 +89,11 @@ public class File_MasterKnowledgeBase extends File {
         TDA_KnowledgeBase tda_kb=null;
         if(oFILE.openFile("MasterKnowledgeBase.bin","r"))
         {
-            tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars());
+            tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),oFILE.file.readBoolean());
             lreg=oFILE.file.getFilePointer();
             desplaza=(position-1)*lreg;
             oFILE.file.seek(desplaza);
-            tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars());
+            tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),oFILE.file.readBoolean());
             //System.out.println("EL valor buscado en la posicion "+position+" es: "+tda_kb.getKey()+"  a  "+tda_kb.getAnt1()+"  c "+tda_kb.getCons());
             oFILE.closeFile();
         }
@@ -101,7 +105,7 @@ public class File_MasterKnowledgeBase extends File {
         StringBuffer buffer;
         if(oFILE.openFile("MasterKnowledgeBase.bin","r"))
         {
-            tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars());
+            tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),oFILE.file.readBoolean());
             lreg=oFILE.file.getFilePointer();
             desplaza=(position-1)*lreg;
             oFILE.closeFile();
@@ -118,13 +122,13 @@ public class File_MasterKnowledgeBase extends File {
             }
         }
     }
-    public Boolean update(Node node,String clause) throws IOException {
+    public Boolean update(Node node,String []c,boolean gui) throws IOException {
         long lreg,desplaza;
         TDA_KnowledgeBase tda_kb;
         StringBuffer buffer;
         if(oFILE.openFile("MasterKnowledgeBase.bin","r"))
         {
-            tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars());
+            tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),oFILE.file.readBoolean());
             lreg=oFILE.file.getFilePointer();
             desplaza=(node.info.getPosition()-1)*lreg;
             oFILE.closeFile();
@@ -138,26 +142,28 @@ public class File_MasterKnowledgeBase extends File {
                     oFILE.file.writeChars(buffer.toString());
                 }
                 oFILE.file.seek(desplaza+4);
-                String c[]=clause.split("V");
+                //String c[]=clause.split("∧");
                 int cou=c.length;
                 if(cou<=7 && cou>1) {
                     for (int i = 0; i < 6; i++) {
-                        buffer=new StringBuffer((i<(cou-1)?c[i]:" "));
+                        buffer=new StringBuffer((i<(cou-1)?(c[i]==null?" ":c[i]):" "));
+                        //buffer=new StringBuffer((i<(cou-1)?c[i]:" "));
                         buffer.setLength(40);
                         oFILE.file.writeChars(buffer.toString());
                     }
-                    buffer=new StringBuffer(c[cou-1]);
+                    buffer=new StringBuffer(c[cou-1]==null?" ":c[cou-1]);
                     buffer.setLength(40);
                     oFILE.file.writeChars(buffer.toString());
                 }
-                else
+               /* else
                 {
                     for (int i = 0; i <7 ; i++) {
-                        buffer=new StringBuffer(i==0?clause:" ");
+                        buffer=new StringBuffer(i==0?c:" ");
                         buffer.setLength(40);
                         oFILE.file.writeChars(buffer.toString());
                     }
-                }
+                }*/
+                oFILE.file.writeBoolean(gui);
                 oFILE.closeFile();
                 return true;
             }
