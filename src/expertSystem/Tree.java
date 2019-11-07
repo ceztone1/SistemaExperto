@@ -1,5 +1,7 @@
 package expertSystem;
-
+/*
+* Clase Arbol para generar un arbol binario del archivo index y lograr hacer busquedas rápidas
+ */
 public class Tree {
     public Node root;
     public String men="";

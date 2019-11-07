@@ -5,7 +5,15 @@ import javafx.collections.ObservableList;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
-
+/*
+* Clase File_Master programada para agregar, mostrar, actualizar o eliminar un registro del archivo maestro
+* Hereda de File
+* Utiliza la clase:
+ *  TDA_Index
+ *  File_domains
+ *  File_predicates
+* Metodos escribir, mostrar, leer (Secuencia y aleatorio), eliminar
+* */
 /*INFORMATION OF THE REGISTER
 
 4 bytes FOR int
@@ -15,6 +23,8 @@ import java.io.RandomAccessFile;
 row size = 565 bytes
 
 * */
+
+
 public class File_MasterKnowledgeBase extends File {
     TDA_Index oTDA_I;
     long ap_actual,ap_final;
@@ -24,19 +34,14 @@ public class File_MasterKnowledgeBase extends File {
     File_domains oFILE_D=new File_domains();
     ObservableList<TDA_KnowledgeBase> rows = FXCollections.observableArrayList();
 
-    public void write (int key,String []c,boolean gui) throws IOException {
-
+    public void write (int key,String []c,boolean gui) throws IOException //Metodo para escribir en el archivo maestro (Recibe llave, antedecentes (6) y consecuentes(1) y un valor booleano) Al finalizar la insercion dentro del archivo Master, se inserta en el archivo index con la posicion logica que le toca (Haciendo el conteo de cada registro) e Index se encargar de agregarlo al arbol binario
+    {
         StringBuffer buffer=null;
         RandomAccessFile file=oFILE.openFile("MasterKnowledgeBase.bin","rw");
-           /* if(oFILE.openFile("MasterKnowledgeBase.bin","rw"))
-            {*/
-                //System.out.println("entré al if "+((file==null)?"yes null":"no null"));
                 long size=file.length();
                 oFILE.file.seek(size);
-                //System.out.println("size es "+size);
                 oFILE.file.writeInt(key);
                 int cou=c.length;
-                //System.out.println("lent  "+cou);
                 long position=(size/565)+1;
                 if(cou<=7 && cou>1) {
                     for (int i = 0; i < 6; i++) {
@@ -56,14 +61,11 @@ public class File_MasterKnowledgeBase extends File {
                 oTDA_I=new TDA_Index(key,(int)(position));
                 oFILE_I.write(oTDA_I,"indexMaster.bin",0);
                 oFILE.closeFile();
-            //}
     }
     public void addPredicates(String predicate) throws IOException //agrega los predicados que comienzan la red de inferencia, es decir, todos aquellos son antecedentes y que no se pueden inferir
     {
         if (predicate!=null)
         {
-            //ObservableList<TDA_KnowledgeBase> tda_knowledgeBase=readSequentially();
-            System.out.println("rows es  "+((rows!=null)?"dife ":"null")+" tam "+rows.size());
             if(rows!=null)
             {
                 int i=0;
@@ -74,22 +76,6 @@ public class File_MasterKnowledgeBase extends File {
                         ban=false;
                     i++;
                 }
-               /* if (ban)
-                {
-
-                }
-                for ( i = 0; i <rows.size() ; i++) {
-                    System.out.println("Con valor  "+rows.get(i).getCons());
-                    System.out.println("HACIENDO LA COMPARACION  -------->" +rows.get(i).getCons() +"      --->  "+predicate);
-                    if (!rows.get(i).getCons().contains(predicate))
-                    {
-                        System.out.println("SI ENTREEEEE  -------->" +rows.get(i).getCons() +"      --->  "+predicate);
-                        TDA_Predicates tda_pAUX;
-                        tda_pAUX=oFILE_P.search(predicate);
-                        if (tda_pAUX==null)
-                            oFILE_P.write(new TDA_Predicates(predicate,null));
-                    }
-                }*/
                 if (rows.size()==0 || ban)
                 {
                     TDA_Predicates tda_pAUX;
@@ -124,11 +110,10 @@ public class File_MasterKnowledgeBase extends File {
             }
         }
     }
-    public ObservableList<TDA_KnowledgeBase> readSequentially() throws IOException {
+    public ObservableList<TDA_KnowledgeBase> readSequentially() throws IOException //Metodo para leer secuencial (de inicio a fin) -> usado para mostrar registros en tabla
+    {
         TDA_KnowledgeBase tda_kb;
         RandomAccessFile file=oFILE.openFile("MasterKnowledgeBase.bin","r");
-        /*if(oFILE.openFile("MasterKnowledgeBase.bin","r"))
-        {*/
             while ((ap_actual=oFILE.file.getFilePointer())!=(ap_final=oFILE.file.length()))
             {
                 tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),oFILE.file.readBoolean());
@@ -136,10 +121,10 @@ public class File_MasterKnowledgeBase extends File {
                     rows.add(tda_kb);
             }
             oFILE.closeFile();
-       // }
         return rows;
     }
-    public String readChars() throws IOException {
+    public String readChars() throws IOException //Metodo generico para leer 40 chars del archivo
+    {
         char ante [] = new char[40],temp;
         for (int c = 0; c < ante.length; c++) {
             temp = oFILE.file.readChar();
@@ -147,35 +132,30 @@ public class File_MasterKnowledgeBase extends File {
         new String(ante).replace('\0',' ');
         return String.valueOf(ante);
     }
-    public TDA_KnowledgeBase readSecRandom(int position) throws IOException {
+    public TDA_KnowledgeBase readSecRandom(int position) throws IOException //Metodo para leer aleatoriamente un registro del archivo maestro (Recibe la posicion encontrada el index pero que se encuentra cargada en RAM en un arbol binario)
+    {
         long lreg,desplaza;
         TDA_KnowledgeBase tda_kb=null;
         RandomAccessFile file=oFILE.openFile("MasterKnowledgeBase.bin","r");
-        /*if(oFILE.openFile("MasterKnowledgeBase.bin","r"))
-        {*/
             tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),oFILE.file.readBoolean());
             lreg=oFILE.file.getFilePointer();
             desplaza=(position-1)*lreg;
             oFILE.file.seek(desplaza);
             tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),oFILE.file.readBoolean());
             oFILE.closeFile();
-        //}
         return tda_kb;
     }
-    public void delete(int position) throws IOException {
+    public void delete(int position) throws IOException //Metodo eliminar, quita el registro deseado del archivo maestro (Recibe posicion, encontrada en el archivo indice que genera un arbol binario en RAM)
+    {
         long lreg,desplaza;
         TDA_KnowledgeBase tda_kb;
         StringBuffer buffer;
-        RandomAccessFile file=oFILE.openFile("MasterKnowledgeBase.bin","r");
-        /*if(oFILE.openFile("MasterKnowledgeBase.bin","r"))
-        {*/
+        file=oFILE.openFile("MasterKnowledgeBase.bin","r");
             tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),oFILE.file.readBoolean());
             lreg=oFILE.file.getFilePointer();
             desplaza=(position-1)*lreg;
             oFILE.closeFile();
             file=oFILE.openFile("MasterKnowledgeBase.bin","rw");
-           /* if (oFILE.openFile("MasterKnowledgeBase.bin","rw"))
-            {*/
                 oFILE.file.seek(desplaza);
                 oFILE.file.writeInt(0);
                 for (int i = 0; i < 7; i++) {
@@ -184,23 +164,18 @@ public class File_MasterKnowledgeBase extends File {
                     oFILE.file.writeChars(buffer.toString());
                 }
                 oFILE.closeFile();
-            //}
-        //}
     }
-    public Boolean update(Node node,String []c,boolean gui) throws IOException {
+    public Boolean update(Node node,String []c,boolean gui) throws IOException //Metodo que actualizar la informacion de un registro
+    {
         long lreg,desplaza;
         TDA_KnowledgeBase tda_kb;
         StringBuffer buffer;
-        RandomAccessFile file=oFILE.openFile("MasterKnowledgeBase.bin","r");
-       /* if(oFILE.openFile("MasterKnowledgeBase.bin","r"))
-        {*/
+        file=oFILE.openFile("MasterKnowledgeBase.bin","r");
             tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),oFILE.file.readBoolean());
             lreg=oFILE.file.getFilePointer();
             desplaza=(node.info.getPosition()-1)*lreg;
             oFILE.closeFile();
             file=oFILE.openFile("MasterKnowledgeBase.bin","rw");
-           /* if (oFILE.openFile("MasterKnowledgeBase.bin","rw"))
-            {*/
                 oFILE.file.seek(desplaza);
                 oFILE.file.writeInt(node.info.getKey());
                 for (int i = 0; i < 7; i++) {
@@ -212,7 +187,8 @@ public class File_MasterKnowledgeBase extends File {
                 int cou=c.length;
                 if(cou<=7 && cou>1) {
                     for (int i = 0; i < 6; i++) {
-                        addDomains(c[i]);
+                        addDomains(c[i]);  //agregar los dominios existentes de los predicados
+                        addPredicates(c[i]); //agregar los predicados al archivo predicates
                         buffer=new StringBuffer((i<(cou-1)?(c[i]==null?" ":c[i]):" "));
                         buffer.setLength(40);
                         oFILE.file.writeChars(buffer.toString());
@@ -225,7 +201,5 @@ public class File_MasterKnowledgeBase extends File {
                 oFILE.file.writeBoolean(gui);
                 oFILE.closeFile();
                 return true;
-            //}
-        //}
     }
 }

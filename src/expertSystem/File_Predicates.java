@@ -3,11 +3,18 @@ import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.io.*;
+/**
+ * clase para generar archivo de predicados y con este archivo poder generar base de hechos
+ * Hereda de File
+ * Metodos para escribir, buscar, actualizar y leer predicados
+ */
+
 public class File_Predicates extends File {
 
     File oFILE=new File();
 
-    public void write(TDA_Predicates tda_predicates) throws IOException {
+    public void write(TDA_Predicates tda_predicates) throws IOException  //Método que escribir un nuevo predicado en archivo
+    {
         bw=new BufferedWriter(new FileWriter("predicates.txt",true));
         bw.write(tda_predicates.getName());
         bw.newLine();
@@ -15,7 +22,8 @@ public class File_Predicates extends File {
         bw.newLine();
         bw.close();
     }
-    public ObservableList<TDA_Predicates> read() throws IOException {
+    public ObservableList<TDA_Predicates> read() throws IOException //Lee todos los registros para mostrar en lista
+    {
         ObservableList<TDA_Predicates> rows=null;
         br=oFILE.openFileBR("predicates.txt");
             String line=br.readLine(),desc;
@@ -30,7 +38,8 @@ public class File_Predicates extends File {
             br.close();
         return rows;
     }
-    public TDA_Predicates search(String name) throws IOException {
+    public TDA_Predicates search(String name) throws IOException //Metodo para buscar un predicado en el archivo
+    {
         TDA_Predicates tda_predicates=null;
         boolean ban=true;
         br=oFILE.openFileBR("predicates.txt");
@@ -47,10 +56,9 @@ public class File_Predicates extends File {
             br.close();
         return tda_predicates;
     }
-    public void update(ObservableList<TDA_Predicates> rows) throws IOException {
+    public void update(ObservableList<TDA_Predicates> rows) throws IOException //Metodo para actualizar una predicado (Se debe generar un archivo temporal nuevo, eliminar el anterior y renombrar el archivo temporal)
+    {
         bw=oFILE.openFileBW("predicatesTemp.txt");
-       // if(oFILE.openFileTxt("predicatesTemp.txt",0)){
-           // bw=new BufferedWriter(new FileWriter(fileTXT));
             for (int i = 0; i <rows.size() ; i++) {
                 bw.write(rows.get(i).getName());
                 bw.newLine();

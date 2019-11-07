@@ -1,9 +1,4 @@
 package expertSystem;
-
-
-
-//import java.io.File;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -11,19 +6,19 @@ import java.io.RandomAccessFile;
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.FileWriter;
-
+/*
+* Clase file, controla abrir y cerrar un archivo, ya sea de texto(txt) o binario (RandomAccessFile). Disponible para escribir y leer
+* */
 public class File {
     RandomAccessFile file;
     BufferedWriter bw=null;
     BufferedReader br=null;
     java.io.File fileTXT;
-
-
-    public RandomAccessFile openFile(String name,String action) throws FileNotFoundException {
+    public RandomAccessFile openFile(String name,String action) //Metodo para abrir archivo del tipo binario (RandomAccessFile)
+    {
      try {
          file=new RandomAccessFile(name,action);
-         System.out.println("si se abrio "+file);
-
+         System.out.println("open file "+file);
          return file;
      }
      catch (Exception e)
@@ -32,10 +27,11 @@ public class File {
      }
         return null;
     }
-    public BufferedReader openFileBR(String name){
+    public BufferedReader openFileBR(String name) //Metodo para abrir archivo txt(Lectura)
+    {
         try {
             fileTXT=new java.io.File(name);
-            System.out.println("file r es  "+fileTXT.getName());
+            System.out.println("file is  "+fileTXT.getName());
             if(!fileTXT.exists()){
                 fileTXT.createNewFile();
             }
@@ -48,11 +44,11 @@ public class File {
             return null;
         }
     }
-
-    public BufferedWriter openFileBW(String name) {
+    public BufferedWriter openFileBW(String name) //Metodo para escribir en archivo txt (Escritura)
+    {
         try {
             fileTXT=new java.io.File(name);
-            System.out.println("file w es  "+fileTXT.getName());
+            System.out.println("file is  "+fileTXT.getName());
             if(!fileTXT.exists()){
                 fileTXT.createNewFile();
             }
@@ -66,33 +62,8 @@ public class File {
         }
     }
 
-    /*public boolean openFileTxt(String name,int option) throws IOException {
-       try {
-           fileTXT=new java.io.File(name);
-           if(!fileTXT.exists()){
-               fileTXT.createNewFile();
-           }
-           if (option==0) {
-               bw=new BufferedWriter(new FileWriter(fileTXT,true));
-               //bw = new BufferedWriter(new FileWriter(fileTXT,true));
-               System.out.println("Si entre con 0  "+fileTXT.getName());
-               return true;
-           }
-           if (option==1)
-           {
-               System.out.println("Si entre con 1 " +fileTXT.getName());
-               br = new BufferedReader(new FileReader(fileTXT));
-               return true;
-           }
-
-        }
-       catch (IOException ex) {
-           System.out.println("Error to create file txt");
-       return false;
-    }
-       return false;
-    }*/
-    public boolean closeFile() throws IOException {
+    public boolean closeFile() throws IOException //Metodo para cerrar archivo (RandomAccessFile)
+    {
         file.close();
         return true;
     }

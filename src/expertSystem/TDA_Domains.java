@@ -1,5 +1,7 @@
 package expertSystem;
-
+/*
+* Clase de TDA de dominios
+ */
 public class TDA_Domains {
     String name;
     String values;

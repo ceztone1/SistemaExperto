@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+/**
+ * Clase Main, controla todo el proyecto y lanza la vista principal
+ */
 
 public class Main extends Application {
 

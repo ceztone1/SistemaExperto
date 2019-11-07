@@ -22,6 +22,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+/**
+ * Controlador de la vista de dominios solo utiliza los elementos de la interfaz e interactura con la clase File_domains
+ *
+ */
 
 public class domains implements Initializable {
     @FXML
@@ -37,16 +41,13 @@ public class domains implements Initializable {
     int pos;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         btnDELETE.setOnAction(handler);
         btnADD.setOnAction(handler);
         refresh();
-
         listDomains.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent arg0) {
                 rowValues.clear();
-                //String values=rows.get(i-1).getValues();
                 if (rows!=null){
                     pos=search(listDomains.getSelectionModel().getSelectedItem());
                     if(rows.get(pos).getValues()!=null){
@@ -57,10 +58,7 @@ public class domains implements Initializable {
                         listElements.setItems(rowValues);
                     }
                 }
-
-
             }
-
         });
         listDomains.setOnKeyPressed(
                 event -> {
@@ -72,15 +70,6 @@ public class domains implements Initializable {
                     }
                 }
         );
-
-       /* listElements.setOnMouseClicked(new EventHandler<MouseEvent>(){
-            @Override
-            public void handle(MouseEvent arg0) {
-                System.out.println("Elemente  "+listElements.getSelectionModel().getSelectedItem());
-            }
-
-        });*/
-
     }
     public void refresh(){
         try {
@@ -93,7 +82,6 @@ public class domains implements Initializable {
                 }
                 listDomains.setItems(rowName);
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -142,9 +130,7 @@ public class domains implements Initializable {
                 }
             }
             if(event.getSource()==btnADD){
-               // txtElement.setVisible(true);
                 try {
-                    //System.out.println("si");
                     update();
                     alert=new Alert(Alert.AlertType.INFORMATION);
                     alert.setContentText("successful addd!");
@@ -179,9 +165,8 @@ public class domains implements Initializable {
             TDA_Domains tda_domains=rows.get(pos);
             String val[]=tda_domains.getValues().split(((position==0)?(""):(","))+listElements.getSelectionModel().getSelectedItem()+((position==0)?((rowValues.size()==1)?"":","):""));
             String v="";
-            for (int i = 0; i <val.length ; i++) {
+            for (int i = 0; i <val.length ; i++)
                 v+=val[i];
-            }
             tda_domains.setValues(v);
             rows.get(pos).setValues(tda_domains.getValues());
             oFILE_D.update(rows);

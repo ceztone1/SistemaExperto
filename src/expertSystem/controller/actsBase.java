@@ -9,18 +9,20 @@ import javafx.scene.layout.VBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class actsBase implements Initializable {
+/*
+* Controlador de vista de base de hechos, solo utiliza los elementos de la interfaz e interactua con MOTOR DE INFERENCIA
+* */
+public class actsBase implements Initializable
+{
     @FXML
     VBox vbox;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-    javafx.event.EventHandler<ActionEvent> handler= new EventHandler<ActionEvent>() {
+    EventHandler<ActionEvent> handler= new EventHandler<ActionEvent>() {
         @Override
-        public void handle(ActionEvent event) {
-
-        }
+        public void handle(ActionEvent event) {}
     };
 
 }

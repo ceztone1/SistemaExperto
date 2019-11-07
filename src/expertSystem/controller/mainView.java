@@ -12,7 +12,9 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+/*
+* Controlador de la vista general, interactua con los controladores de las demas vistas
+* */
 public class mainView implements Initializable {
      @FXML
     JFXButton btnDO,btnKB,btnAB,btnPR;
@@ -64,5 +66,4 @@ public class mainView implements Initializable {
         }
         }
     };
-
 }

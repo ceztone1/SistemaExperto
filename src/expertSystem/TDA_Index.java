@@ -1,5 +1,8 @@
 package expertSystem;
 
+/*
+ * Clase de TDA de index
+ */
 public class TDA_Index {
     int key;
     int position;

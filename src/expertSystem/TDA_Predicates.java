@@ -1,5 +1,7 @@
 package expertSystem;
-
+/*
+ * Clase de TDA de predicados
+ */
 public class TDA_Predicates {
     String name;
 

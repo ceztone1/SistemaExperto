@@ -2,9 +2,15 @@ package expertSystem;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.io.*;
+/**
+ * Clase File_domains para realizar la escritura, lectura y busqueda de dominios en el archivo domains.txt hereda de File
+ *
+ */
+
 public class File_domains extends File{
-  File oFILE=new File();
-  public void write(TDA_Domains tda_domains) throws IOException {
+  File oFILE=new File(); //Objeto de File
+  public void write(TDA_Domains tda_domains) throws IOException  //Metodo para escribir en archivo
+  {
           bw=new BufferedWriter(new FileWriter("domains.txt",true));
           bw.write(tda_domains.getName());
           bw.newLine();
@@ -12,7 +18,8 @@ public class File_domains extends File{
           bw.newLine();
           bw.close();
   }
-  public ObservableList<TDA_Domains> read() throws IOException {
+  public ObservableList<TDA_Domains> read() throws IOException //Metodo para leer del archivo (Lectura secuencial)
+  {
       ObservableList<TDA_Domains> rows=null;
       TDA_Domains tda_domains;
       br=oFILE.openFileBR("domains.txt");
@@ -31,7 +38,8 @@ public class File_domains extends File{
           br.close();
       return rows;
   }
-  public TDA_Domains search(String name) throws IOException {
+  public TDA_Domains search(String name) throws IOException //Metodo para buscar un dominio
+  {
       TDA_Domains tda_domains=null;
       boolean ban=true;
       br=oFILE.openFileBR("domains.txt");
@@ -48,7 +56,8 @@ public class File_domains extends File{
          br.close();
       return tda_domains;
   }
-  public void update(ObservableList<TDA_Domains> rows) throws IOException {
+  public void update(ObservableList<TDA_Domains> rows) throws IOException //Metodo para actualizar el archivo (Se debe crear un archivo temporal, eliminar el anterior y renombrar el archivo temporal)
+  {
       bw=oFILE.openFileBW("domainsTemp.txt");
           for (int i = 0; i <rows.size() ; i++) {
                 bw.write(rows.get(i).getName());

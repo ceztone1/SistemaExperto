@@ -18,7 +18,9 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+/*
+* Controlador de la vista de predicados, se puede cambiar la descripcion del predicado interactua con la clase File_predicates
+* */
 public class predicates implements Initializable {
     @FXML
     JFXListView<String> listPredicate;

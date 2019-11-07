@@ -17,9 +17,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
-
-import static javafx.scene.paint.Color.WHITE;
-
+/*
+* Controlador de la vista base de conocimiento utiliza los elementos de la vista para mostrar, agregar, actualizar y eliminar reglas interactua directamente con la clase File_MasterKnowledge
+* */
 public class knowledgeBase implements Initializable {
     @FXML
     JFXButton btnADD,btnDELETE,btnEDIT,btnSEARCH,btnOR,btnNEG;
@@ -32,8 +32,6 @@ public class knowledgeBase implements Initializable {
     @FXML
     TableView<TDA_KnowledgeBase> tblcb;
     File_MasterKnowledgeBase oFILE_KB=new File_MasterKnowledgeBase();
-    Alert alert;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnADD.setOnAction(handler);
@@ -42,7 +40,6 @@ public class knowledgeBase implements Initializable {
         btnSEARCH.setOnAction(handler);
         btnOR.setOnAction(handler);
         btnNEG.setOnAction(handler);
-
         tblcb.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent e) {
@@ -101,6 +98,7 @@ public class knowledgeBase implements Initializable {
         }
     };
     public void search(){
+        Alert alert;
         Node node;
         if (!txtSEARCH.getText().isEmpty()) {
             try {
@@ -143,10 +141,10 @@ public class knowledgeBase implements Initializable {
     }
     public void delete()
     {
+        Alert alert;
         Node node;
         if(tblcb.getSelectionModel().getSelectedIndex()>=0) {
             TDA_KnowledgeBase tda_knowledgeBase = (tblcb.getSelectionModel().getSelectedItem());
-
             alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Advertisement");
             alert.setHeaderText("Delete confirm");
@@ -163,11 +161,7 @@ public class knowledgeBase implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                //System.out.println(oFILE_KB.oFILE_I.oTREE.pre_orden(oFILE_KB.oFILE_I.oTREE.root));
-
-                System.out.println("el nodo es  "+node.info.getKey()+ "  "+node.info.getPosition());
-            } else if (option.get() == ButtonType.CANCEL) {
-            }
+            } else if (option.get() == ButtonType.CANCEL) {            }
         }
         else {
             alert=new Alert(Alert.AlertType.ERROR);
@@ -182,28 +176,19 @@ public class knowledgeBase implements Initializable {
     //dsdas^d^a^f^ff^q>>f
     public boolean validForm(String clause) //Metodo que asegura que la premisa tenga parentesis y domino
     {
-        int c=0;//d=0;
-       // boolean ban=false;
+        int c=0;
         for (int i = 0; i < clause.length(); i++) {
-          /*  if(ban && clause.charAt(i)!=')' && clause.charAt(i)!=' ')
-            {
-                d++;
-            }*/
             if(clause.charAt(i)=='(') {
                 c++;
-              //  ban=true;
             }
             if (clause.charAt(i)==')')
                 c--;
         }
-        return (c==0)/*&&d>0*/?true:false;
-
+        return (c==0)?true:false;
     }
     public String [] valid(String clause){
         String []a=null,c=null,l=new String[7];
         boolean ban=true;
-        int i,j;
-        i=j=0;
         a=clause.split("∧");
         if(a.length==1) //no encontró el simbolo
         {
@@ -274,20 +259,15 @@ public class knowledgeBase implements Initializable {
     }
     public void insert()
     {
+        Alert alert;
         if(!txtADD.getText().isEmpty())
         {
             String clause=txtADD.getText();
-            //System.out.println("aqui si   "+clause);
             String []c=valid(clause);
             if(c!=null) {
-                for (int i = 0; i <7 ; i++) {
-                    System.out.println("values     \n"+c[i]);
-
-                }
                 try {
                     int key = Integer.parseInt(Alert());
                     if (!oFILE_KB.oFILE_I.oTREE.search(key)) {
-                        System.out.println("si entre");
                         oFILE_KB.write(key, c,  false);
                         txtADD.clear();
                     } else {
@@ -318,6 +298,7 @@ public class knowledgeBase implements Initializable {
         }
     }
     public void update(){
+        Alert alert;
         try {
             if(tblcb.getSelectionModel().getSelectedIndex()>=0) {
                 TDA_KnowledgeBase tda_knowledgeBase = (tblcb.getSelectionModel().getSelectedItem());
@@ -339,13 +320,11 @@ public class knowledgeBase implements Initializable {
                         alert.show();
                     }
                     }
-
             }
         }catch (Exception e)
         {
             System.out.println("dd "+e);
         }
-
         //if edit has succefull then put visible the button ADD and no visible EDIT
         btnADD.setVisible(true);
         btnEDIT.setVisible(false);
@@ -355,33 +334,21 @@ public class knowledgeBase implements Initializable {
         try {
             tblcb.getItems().clear();
             tblcb.setItems(oFILE_KB.readSequentially());
-            //oFILE_KB.readSecRandom(1);
             oFILE_KB.oFILE_I.readSequentially("indexMaster.bin");
             System.out.println(oFILE_KB.oFILE_I.oTREE.pre_orden(oFILE_KB.oFILE_I.oTREE.root));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        /*tblcb.getItems().clear();
-        tblcb.setItems(oFILE_KB.readSequentially());*/
     }
     public String Alert(){
         TextInputDialog dialog = new TextInputDialog("1");
         dialog.setTitle("Clause key");
         dialog.setHeaderText("A key");
         dialog.setContentText("Please enter a key:");
-
-// Traditional way to get the response value.
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()){
             result.get();
         }
         return result.get();
     }
-
-  /*  private void closeStage( )
-    {
-        Stage stage = (Stage) VBC.getScene().getWindow();
-        stage.close();
-    }*/
-
 }

@@ -1,5 +1,7 @@
 package expertSystem;
-
+/*
+ * Clase de TDA de base de conocimiento
+ */
 public class TDA_KnowledgeBase {
     int key;
 
