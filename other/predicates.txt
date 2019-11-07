@@ -1,0 +1,7 @@
+tiene(p,e)
+
+pensamientos(p,pn)
+
+sintomas(t)
+
+sintomas(c)

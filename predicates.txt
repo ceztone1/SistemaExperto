@@ -1,0 +1,10 @@
+tiene(p,e)
+p tiene e
+pensamientos(p,pn)
+p tiene pensamientos pn
+sintomas(t)
+t son sintomas de tabues
+sintomas(c)
+c son sintomas de temor a contaminación
+sintomas(d)
+d son sintomas de dudas
