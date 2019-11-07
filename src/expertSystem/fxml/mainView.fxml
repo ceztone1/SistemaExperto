@@ -26,6 +26,7 @@
             </HBox.margin>
             <JFXButton fx:id="btnKB"   prefHeight="30.0" prefWidth="130.0" ripplerFill="#791919" style="-fx-background-color: #D2D6D7; -fx-background-radius: 20; -fx-text-fill: #000000; -fx-font-size: 12px" text="Knowledge Base" />
             <JFXButton fx:id="btnAB"   prefHeight="30.0" prefWidth="130.0" ripplerFill="#791919" style="-fx-background-color: #D2D6D7; -fx-background-radius: 20; -fx-text-fill: #000000; -fx-font-size: 12px" text="Acts Base" />
+            <JFXButton fx:id="btnPR"   prefHeight="30.0" prefWidth="130.0" ripplerFill="#791919" style="-fx-background-color: #D2D6D7; -fx-background-radius: 20; -fx-text-fill: #000000; -fx-font-size: 12px" text="Predicates" />
             <MenuBar nodeOrientation="RIGHT_TO_LEFT" style="-fx-background-color: TRANSPARENT; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.1), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 0; -fx-border-radius: 0; -fx-padding: 10; ">
                 <menus>
 
@@ -136,6 +137,9 @@
                        </VBox>
                        <VBox fx:id="vbAB" visible="true">
                            <fx:include fx:id="actsBase" source="actsBase.fxml"></fx:include>
+                        </VBox>
+                        <VBox fx:id="vbPR" visible="false">
+                            <fx:include fx:id="predicates" source="predicates.fxml"></fx:include>
                         </VBox>
                        <!-- <VBox fx:id="VBI" visible="false">
                             <fx:include fx:id="inventario" source="inventario_Layout.fxml"></fx:include>

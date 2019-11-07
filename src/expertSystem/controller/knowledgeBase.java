@@ -154,7 +154,6 @@ public class knowledgeBase implements Initializable {
             Optional<ButtonType> option = alert.showAndWait();
             if (option.get() == ButtonType.OK) {
                 node=oFILE_KB.oFILE_I.oTREE.seaNode(tda_knowledgeBase.getKey());
-
                 try {
                     oFILE_KB.oFILE_I.oTREE.delete(node.info.getKey());
                     oFILE_KB.oFILE_I.delete(node.info.getKey(),"indexMaster.bin");
@@ -181,15 +180,23 @@ public class knowledgeBase implements Initializable {
     //fdf^s>>s
     //fd^ss
     //dsdas^d^a^f^ff^q>>f
-    public boolean validForm(String clause){
-        int c=0;
+    public boolean validForm(String clause) //Metodo que asegura que la premisa tenga parentesis y domino
+    {
+        int c=0;//d=0;
+       // boolean ban=false;
         for (int i = 0; i < clause.length(); i++) {
-            if(clause.charAt(i)=='(')
-              c++;
+          /*  if(ban && clause.charAt(i)!=')' && clause.charAt(i)!=' ')
+            {
+                d++;
+            }*/
+            if(clause.charAt(i)=='(') {
+                c++;
+              //  ban=true;
+            }
             if (clause.charAt(i)==')')
                 c--;
         }
-        return (c==0)?true:false;
+        return (c==0)/*&&d>0*/?true:false;
 
     }
     public String [] valid(String clause){
@@ -203,6 +210,7 @@ public class knowledgeBase implements Initializable {
           c=clause.split("→");
           if(c.length==1)
           {
+              l[1]=null;
               l[0]=clause; //solo tiene un antecedente y ninguno más ni consecuente
               return (validForm(l[0])?l:null);
           }
@@ -279,7 +287,8 @@ public class knowledgeBase implements Initializable {
                 try {
                     int key = Integer.parseInt(Alert());
                     if (!oFILE_KB.oFILE_I.oTREE.search(key)) {
-                        oFILE_KB.write(key, c, (cbGUI.isSelected()) ? true : false);
+                        System.out.println("si entre");
+                        oFILE_KB.write(key, c,  false);
                         txtADD.clear();
                     } else {
                         alert = new Alert(Alert.AlertType.ERROR);
@@ -290,14 +299,14 @@ public class knowledgeBase implements Initializable {
                 } catch (Exception e) {
                     alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error");
-                    alert.setContentText("Unfortunately something failed! :( ");
+                    alert.setContentText("Unfortunately something failed! :( ca");
                     alert.show();
                 }
             }
             else {
                 alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setContentText("Unfortunately something failed! :( ");
+                alert.setContentText("Unfortunately something failed! :( if");
                 alert.show();
             }
 

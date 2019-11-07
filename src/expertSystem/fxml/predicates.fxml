@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="expertSystem.controller.predicates"
+           >
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label maxWidth="1500" prefWidth="1500" style="-fx-background-color: #ADCAF2; -fx-font-size: 15pt; -fx-text-fill:#FFFFFF; -fx-font-weight:bold;" text="Predicates" />
+        </HBox>
+
+    </top>
+    <center>
+        <AnchorPane>
+            <HBox spacing="10" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10" VBox.vgrow="ALWAYS">
+                <VBox>
+                    <HBox spacing="10" alignment="CENTER">
+                        <VBox spacing="5">
+                            <Label text="Predicate"></Label>
+                            <JFXListView prefHeight="500" fx:id="listPredicate" orientation="VERTICAL">
+                            </JFXListView>
+                        </VBox>
+
+                        <VBox spacing="5">
+                            <Label text="Description of predicate"></Label>
+                            <JFXTextArea fx:id="txaDescription" prefHeight="500" prefWidth="650" focusColor="WHITE"  promptText="Description" unFocusColor="WHITE" ></JFXTextArea>
+                        </VBox>
+                    </HBox>
+                    <!--<TableView prefWidth="485.0">
+
+                    </TableView>-->
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </HBox.margin>
+                </VBox>
+                <VBox prefHeight="400.0" prefWidth="539.0">
+                    <HBox>
+                        <Label prefHeight="21.0" prefWidth="192.0" text="Actions">
+                            <font>
+                                <Font size="25.0" />
+                            </font></Label>
+                        <VBox.margin>
+                            <Insets top="100.0" />
+                        </VBox.margin>
+                    </HBox>
+                    <HBox>
+                        <VBox  spacing="5" prefWidth="180">
+                            <children>
+                               <!-- <JFXButton fx:id="btnDELETE" style="-fx-background-color: #FF3046;  -fx-background-radius: 20; -fx-text-fill: #FFFFFF; -fx-font-size: 15px" text="DELETE ELEMENT"  />-->
+                                <JFXButton fx:id="btnADD"  style="-fx-background-color: #30FF3D; -fx-background-radius: 20; -fx-text-fill: #FFFFFF; -fx-font-size: 15px" text="ADD DESCRIPTION">
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin></JFXButton>
+                                <JFXButton fx:id="btnSE" visible="false" style="-fx-background-color: #EA43F7; -fx-background-radius: 20; -fx-text-fill: #FFFFFF; -fx-font-size: 15px" text="SAVE NEW DESCP.">
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin></JFXButton>
+                            </children>
+                        </VBox>
+                        <VBox>
+                            <!-- <JFXComboBox fx:id="cbElements" prefWidth="150.0"  focusColor="WHITE" style="-jfx-unfocus-color: white;" unFocusColor="WHITE"/>-->
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </VBox>
+
+
+                    </HBox>
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </HBox.margin>
+
+
+                </VBox>
+            </HBox>
+        </AnchorPane>
+    </center>
+
+</BorderPane>

@@ -13,11 +13,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class domains implements Initializable {
@@ -37,30 +40,39 @@ public class domains implements Initializable {
 
         btnDELETE.setOnAction(handler);
         btnADD.setOnAction(handler);
-        try {
+        refresh();
 
-            rows=oFILE_D.read();
-            for (int i = 0; i <rows.size() ; i++) {
-                rowName.add(rows.get(i).getName());
-            }
-            listDomains.setItems(rowName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         listDomains.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent arg0) {
                 rowValues.clear();
                 //String values=rows.get(i-1).getValues();
-                pos=search(listDomains.getSelectionModel().getSelectedItem());
-                String v[]=rows.get(pos).getValues().split(",");
-                for (int j = 0; j <v.length ; j++) {
-                    rowValues.add(v[j]);
+                if (rows!=null){
+                    pos=search(listDomains.getSelectionModel().getSelectedItem());
+                    if(rows.get(pos).getValues()!=null){
+                        String v[]=rows.get(pos).getValues().split(",");
+                        for (int j = 0; j <v.length ; j++) {
+                            rowValues.add(v[j]);
+                        }
+                        listElements.setItems(rowValues);
+                    }
                 }
-                listElements.setItems(rowValues);
+
+
             }
 
         });
+        listDomains.setOnKeyPressed(
+                event -> {
+                    switch (event.getCode())
+                    {
+                        case F5:
+                            refresh();
+                            break;
+                    }
+                }
+        );
+
        /* listElements.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override
             public void handle(MouseEvent arg0) {
@@ -69,6 +81,22 @@ public class domains implements Initializable {
 
         });*/
 
+    }
+    public void refresh(){
+        try {
+            listDomains.getItems().clear();
+            rows=oFILE_D.read();
+            if(rows!=null)
+            {
+                for (int i = 0; i <rows.size() ; i++) {
+                    rowName.add(rows.get(i).getName());
+                }
+                listDomains.setItems(rowName);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public int search(String selected){
         int i=0;
@@ -93,9 +121,22 @@ public class domains implements Initializable {
     EventHandler<ActionEvent> handler= new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
+            Alert alert;
             if(event.getSource()==btnDELETE){
                 try {
-                    delete();
+                    alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle("Advertisement");
+                    alert.setHeaderText("Delete confirm");
+                    alert.setContentText("Are you sure delete row " + listElements.getSelectionModel().getSelectedItem()+ "?");
+                    Optional<ButtonType> option = alert.showAndWait();
+                    if (option.get() == ButtonType.OK) {
+                        delete();
+                        alert=new Alert(Alert.AlertType.INFORMATION);
+                        alert.setContentText("successful delete!");
+                        alert.setTitle("Successfully");
+                        alert.show();
+                    } else if (option.get() == ButtonType.CANCEL) {
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -103,22 +144,29 @@ public class domains implements Initializable {
             if(event.getSource()==btnADD){
                // txtElement.setVisible(true);
                 try {
-                    System.out.println("si");
+                    //System.out.println("si");
                     update();
+                    alert=new Alert(Alert.AlertType.INFORMATION);
+                    alert.setContentText("successful addd!");
+                    alert.setTitle("Successfully");
+                    alert.show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
+            rows.clear();
+            rowValues.clear();
+            rowName.clear();
+            refresh();
+            txtElement.clear();
         }
     };
     public void update() throws IOException {
         int position;
         if (listDomains.getSelectionModel().getSelectedIndex() >= 0) {
-            //System.out.println("Selectteddd "+listDomains.getSelectionModel().getSelectedIndex());
             position=search(listDomains.getSelectionModel().getSelectedItem());
             TDA_Domains tda_domains=rows.get(position);
-            tda_domains.setValues((tda_domains.getValues()!=null)?tda_domains.getValues()+(rowValues.size()==1?"":",")+txtElement.getText():","+txtElement.getText());
-            //System.out.println("Queda   "+tda_domains.getValues());
+            tda_domains.setValues((tda_domains.getValues()==null?(txtElement.getText()):(tda_domains.getValues()+","+txtElement.getText())));
             rows.get(position).setName(tda_domains.getName());
             rows.get(position).setValues(tda_domains.getValues());
             oFILE_D.update(rows);
@@ -128,14 +176,12 @@ public class domains implements Initializable {
         if (listElements.getSelectionModel().getSelectedIndex() >= 0) {
             int position;
             position=searchListElements(listElements.getSelectionModel().getSelectedItem());
-            System.out.println("Selectec   "+listElements.getSelectionModel().getSelectedItem()+"  "+position +" "+rowValues.size()+"    gfh   "+(position==(rowValues.size()-1)?",":"")+listElements.getSelectionModel().getSelectedItem()+(position==(rowValues.size()-1)?"":","));
             TDA_Domains tda_domains=rows.get(pos);
-            String val[]=tda_domains.getValues().split((position==(rowValues.size()-1)?(position==0)?"":",":"")+listElements.getSelectionModel().getSelectedItem()+(position==(rowValues.size()-1)?"":","));
+            String val[]=tda_domains.getValues().split(((position==0)?(""):(","))+listElements.getSelectionModel().getSelectedItem()+((position==0)?((rowValues.size()==1)?"":","):""));
             String v="";
             for (int i = 0; i <val.length ; i++) {
                 v+=val[i];
             }
-            //System.out.println("Queda  "+v);
             tda_domains.setValues(v);
             rows.get(pos).setValues(tda_domains.getValues());
             oFILE_D.update(rows);

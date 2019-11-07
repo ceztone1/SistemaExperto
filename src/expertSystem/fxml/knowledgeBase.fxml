@@ -78,7 +78,7 @@
 
 
                 <JFXTextArea fx:id="txtADD" focusColor="WHITE" layoutX="687.0" layoutY="103.0" prefHeight="99.0" prefWidth="286.0" promptText="Clause" unFocusColor="WHITE" />
-                <JFXCheckBox fx:id="cbGUI" text="GUI" checkedColor="green" selected="false"></JFXCheckBox>
+                <JFXCheckBox fx:id="cbGUI" visible="false" text="GUI" checkedColor="green" selected="false"></JFXCheckBox>
 </HBox>
                 <HBox alignment="CENTER" spacing="10">
                     <JFXButton fx:id="btnADD" buttonType="RAISED" layoutX="680.0" layoutY="224.0" prefHeight="50.0" prefWidth="140.0" ripplerFill="#791919" style="-fx-background-color: #30FF3D; -fx-background-radius: 20; -fx-text-fill: #FFFFFF; -fx-font-size: 15px" text="ADD" />
