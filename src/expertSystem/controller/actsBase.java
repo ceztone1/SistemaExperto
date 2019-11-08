@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Stack;
 
 /*
  * Controlador de vista de base de hechos, solo utiliza los elementos de la interfaz e interactua con MOTOR DE INFERENCIA
@@ -52,6 +53,7 @@ public class actsBase implements Initializable {
     ObservableList<String> factsBase = FXCollections.observableArrayList();
     ObservableList<String> fcBm = FXCollections.observableArrayList();
     ObservableList<String> empty = FXCollections.observableArrayList();
+    File_MasterKnowledgeBase oFILE_KB = new File_MasterKnowledgeBase();
     JFXButton btn[];
 
     @Override
@@ -90,13 +92,55 @@ public class actsBase implements Initializable {
                     }
                 }
             }
+
             if (btnIn==event.getSource())
             {
+                Stack<String> bh = new Stack<>();
+
+                ObservableList<TDA_KnowledgeBase> rows = FXCollections.observableArrayList();
+                encadenamiento e = new encadenamiento();
+                try {
+                    rows=oFILE_KB.readSequentially();
+                } catch (IOException s) {
+                    s.printStackTrace();
+                }
                 System.out.println("infer YAAAA");
                 for (int j = 0; j <fcBm.size() ; j++) {
+                    bh.push(fcBm.get(j));
                     System.out.println(fcBm.get(j).toString());
 
                 }
+                ArrayList<String> justificacion ;
+               justificacion= e.adelante(rows,bh);
+                Node nod
+                        ;
+               String mensaje="Reglas utilizadas\n";
+                for (int j = 0; j < justificacion.size(); j++) {
+                    System.out.println("Justificacion   "+justificacion.get(j).);
+                    int llave=Integer.parseInt(justificacion.get(j));
+                    nod=oFILE_KB.oFILE_I.oTREE.seaNode(2);
+                    if (nod==null)
+                        System.out.println("diferente"
+                        );
+                    System.out.println(nod+"    nooooooooooooodo");
+                    try {
+                        TDA_KnowledgeBase t = new TDA_KnowledgeBase();
+                    t=oFILE_KB.readSecRandom(nod.info.getPosition());
+                    mensaje+=t.getAnt1()+" "+t.getAnt2()+" "+t.getAnt3()+" "+t.getAnt4()+" "+t.getAnt5()+" "+t.getAnt6()+t.getCons()+"\n";
+
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+
+
+
+                }
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText(mensaje);
+                alert.setTitle("Justificacion");
+                alert.show();
+
+
             }
         }
     };

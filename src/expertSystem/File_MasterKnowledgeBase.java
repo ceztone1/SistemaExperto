@@ -115,8 +115,7 @@ public class File_MasterKnowledgeBase extends File {
         TDA_KnowledgeBase tda_kb;
         RandomAccessFile file=oFILE.openFile("MasterKnowledgeBase.bin","r");
             while ((ap_actual=oFILE.file.getFilePointer())!=(ap_final=oFILE.file.length()))
-            {
-                tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),readChars(),oFILE.file.readBoolean());
+            {  tda_kb=new TDA_KnowledgeBase(oFILE.file.readInt(),readChars().replace("\u0000", ""),readChars().replace("\u0000", ""),readChars().replace("\u0000", ""),readChars(),readChars().replace("\u0000", ""),readChars().replace("\u0000", ""),readChars().replace("\u0000", ""),oFILE.file.readBoolean());
                 if(tda_kb.getKey()!=0)
                     rows.add(tda_kb);
             }

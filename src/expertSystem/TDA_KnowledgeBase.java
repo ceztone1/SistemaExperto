@@ -5,7 +5,11 @@ package expertSystem;
 public class TDA_KnowledgeBase {
     int key;
 
-    public TDA_KnowledgeBase(int key, String ant1, String ant2, String ant3, String ant4, String ant5, String ant6, String cons,boolean gui) {
+    public TDA_KnowledgeBase() {
+
+    }
+
+    public TDA_KnowledgeBase(int key, String ant1, String ant2, String ant3, String ant4, String ant5, String ant6, String cons, boolean gui) {
         this.key = key;
         this.ant1 = ant1;
         this.ant2 = ant2;
@@ -17,6 +21,11 @@ public class TDA_KnowledgeBase {
         this.cons = cons;
         this.gui=gui;
     }
+    public TDA_KnowledgeBase(int key, int num) {
+        this.key = key;
+
+    }
+
 
     String ant1,ant2,ant3,ant4,ant5,ant6;
     String cons;
