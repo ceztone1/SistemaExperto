@@ -9,13 +9,11 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
-import javafx.scene.SnapshotResult;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -112,34 +110,34 @@ public class actsBase implements Initializable {
                 }
                 ArrayList<String> justificacion ;
                justificacion= e.adelante(rows,bh);
-                Node nod
-                        ;
+                Node nod                        ;
                String mensaje="Reglas utilizadas\n";
+               oFILE_KB=new File_MasterKnowledgeBase();
+                try {
+                    oFILE_KB.oFILE_I.readSequentially("indexMaster.bin");
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
                 for (int j = 0; j < justificacion.size(); j++) {
-                    System.out.println("Justificacion   "+justificacion.get(j).);
-                    int llave=Integer.parseInt(justificacion.get(j));
-                    nod=oFILE_KB.oFILE_I.oTREE.seaNode(2);
-                    if (nod==null)
-                        System.out.println("diferente"
-                        );
-                    System.out.println(nod+"    nooooooooooooodo");
                     try {
-                        TDA_KnowledgeBase t = new TDA_KnowledgeBase();
-                    t=oFILE_KB.readSecRandom(nod.info.getPosition());
-                    mensaje+=t.getAnt1()+" "+t.getAnt2()+" "+t.getAnt3()+" "+t.getAnt4()+" "+t.getAnt5()+" "+t.getAnt6()+t.getCons()+"\n";
-
-                    } catch (IOException ex) {
+                    int llave=Integer.parseInt(justificacion.get(j));
+                    if (oFILE_KB!=null)
+                    {
+                        if (oFILE_KB.oFILE_I.oTREE!=null)
+                        {
+                            nod=oFILE_KB.oFILE_I.oTREE.seaNode(llave);
+                            TDA_KnowledgeBase t =oFILE_KB.readSecRandom(nod.info.getPosition());
+                            mensaje+=t.getAnt1()+" ∧ "+t.getAnt2()+" ∧ "+t.getAnt3()+" ∧ "+t.getAnt4()+" ∧ "+t.getAnt5()+" ∧ "+t.getAnt6()+" → "+t.getCons()+"\n";
+                        }
+                    }
+                    } catch (Exception ex) {
                         ex.printStackTrace();
                     }
-
-
-
                 }
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setContentText(mensaje);
                 alert.setTitle("Justificacion");
                 alert.show();
-
 
             }
         }

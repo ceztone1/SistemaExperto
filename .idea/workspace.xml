@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bf6d255-0216-46b2-973e-0fec9f8262c2" name="Default" comment="Add files, domains, predicates and folder &quot;other&quot; by TEAM">
-      <change afterPath="$PROJECT_DIR$/src/expertSystem/encadenamiento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MasterKnowledgeBase.bin" beforeDir="false" afterPath="$PROJECT_DIR$/MasterKnowledgeBase.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domains.txt" beforeDir="false" afterPath="$PROJECT_DIR$/domains.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexMaster.bin" beforeDir="false" afterPath="$PROJECT_DIR$/indexMaster.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expertSystem/File_MasterKnowledgeBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expertSystem/File_MasterKnowledgeBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/expertSystem/TDA_KnowledgeBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expertSystem/TDA_KnowledgeBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/File_MasterKnowledgeBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/File_MasterKnowledgeBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/TDA_KnowledgeBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SistemaExperto/expertSystem/TDA_KnowledgeBase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/expertSystem/controller/actsBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/expertSystem/controller/actsBase.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,74 +29,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/event/Event.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="197" selection-start-line="197" selection-end-line="197" />
-              <folding>
-                <element signature="e#3304#3305#0" expanded="true" />
-                <element signature="e#3336#3337#0" expanded="true" />
-                <element signature="e#4362#4363#0" expanded="true" />
-                <element signature="e#4393#4394#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="8411" selection-start-line="8411" selection-end-line="8411" />
-              <folding>
-                <element signature="e#40494#40495#0" expanded="true" />
-                <element signature="e#40528#40529#0" expanded="true" />
-                <element signature="e#45769#45770#0" expanded="true" />
-                <element signature="e#45811#45812#0" expanded="true" />
-                <element signature="e#48219#48220#0" expanded="true" />
-                <element signature="e#48263#48264#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/Button.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="186" selection-start-line="186" selection-end-line="186" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/expertSystem/encadenamiento.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/expertSystem/File_Index.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/expertSystem/Tree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="81" column="35" lean-forward="true" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/Dialog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="145">
@@ -114,8 +43,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/expertSystem/File_MasterKnowledgeBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+            <state relative-caret-position="442">
+              <caret line="133" column="39" lean-forward="true" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/mainView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/knowledgeBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="89" column="52" selection-start-line="84" selection-start-column="50" selection-end-line="89" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -124,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/src/expertSystem/TDA_KnowledgeBase.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -132,8 +79,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/actsBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="118" column="79" selection-start-line="118" selection-start-column="79" selection-end-line="118" selection-end-column="79" />
+            <state relative-caret-position="-485">
+              <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/expertSystem/Tree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/expertSystem/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -150,11 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>10</find>
-      <find>rea</find>
-      <find>resizeArray</find>
-      <find>jfxte</find>
-      <find>rowElements</find>
       <find>text</find>
       <find>vbox</find>
       <find>prom</find>
@@ -179,7 +142,12 @@
       <find>read</find>
       <find>readsequen</find>
       <find>sea</find>
+      <find>BTNi</find>
+      <find>oFILE_KB</find>
+      <find>ofil</find>
+      <find>readSe</find>
       <find>btnIn</find>
+      <find>btnor</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -209,7 +177,6 @@
         <option value="$PROJECT_DIR$/src/expertSystem/TDA_Domains.java" />
         <option value="$PROJECT_DIR$/src/expertSystem/TDA_Index.java" />
         <option value="$PROJECT_DIR$/src/expertSystem/TDA_Predicates.java" />
-        <option value="$PROJECT_DIR$/src/expertSystem/Tree.java" />
         <option value="$PROJECT_DIR$/src/expertSystem/File_domains.java" />
         <option value="$PROJECT_DIR$/src/CSS/css.css" />
         <option value="$PROJECT_DIR$/src/expertSystem/controller/knowledgeBase.java" />
@@ -217,6 +184,7 @@
         <option value="$PROJECT_DIR$/src/expertSystem/File_MasterKnowledgeBase.java" />
         <option value="$PROJECT_DIR$/src/expertSystem/encadenamiento.java" />
         <option value="$PROJECT_DIR$/src/expertSystem/TDA_KnowledgeBase.java" />
+        <option value="$PROJECT_DIR$/src/expertSystem/Tree.java" />
         <option value="$PROJECT_DIR$/src/expertSystem/controller/actsBase.java" />
       </list>
     </option>
@@ -236,33 +204,44 @@
         <subPane>
           <expand>
             <path>
-              <item name="SistemaExperto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaExperto" type="462c0819:PsiDirectoryNode" />
+              <item name="SE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SE" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SistemaExperto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaExperto" type="462c0819:PsiDirectoryNode" />
+              <item name="SE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SE" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SE" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SistemaExperto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaExperto" type="462c0819:PsiDirectoryNode" />
+              <item name="SE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SE" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="expertSystem" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SistemaExperto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaExperto" type="462c0819:PsiDirectoryNode" />
+              <item name="SE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SE" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="expertSystem" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SE" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="JAR" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,7 +308,6 @@
       </method>
     </configuration>
     <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -375,6 +353,7 @@
       <workItem from="1573155871190" duration="14092000" />
       <workItem from="1573173349373" duration="33409000" />
       <workItem from="1573225361320" duration="5527000" />
+      <workItem from="1573231133913" duration="1332000" />
     </task>
     <task id="LOCAL-00001" summary="Update all 90% complete by QUIQUE">
       <created>1571233115885</created>
@@ -422,25 +401,25 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126116000" />
+    <option name="totallyTimeSpent" value="127448000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49739584" visible="true" weight="0.22214764" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49739584" visible="true" weight="0.22541603" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5026042" side_tool="true" visible="true" weight="0.22214764" />
+      <window_info id="Favorites" order="6" sideWeight="0.5026042" side_tool="true" weight="0.22214764" />
       <window_info id="simpleUML" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" visible="true" weight="0.45609066" />
+      <window_info anchor="bottom" id="Run" order="4" weight="0.45499182" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.407932" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -532,12 +511,6 @@
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/expertSystem/controller/actsBase.java</url>
-          <line>112</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -569,14 +542,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/mainView.java" />
     <entry file="file://$PROJECT_DIR$/src/expertSystem/fxml/domains.fxml" />
     <entry file="file://$PROJECT_DIR$/src/expertSystem/fxml/predicates.fxml" />
     <entry file="file://$PROJECT_DIR$/src/expertSystem/File.java" />
     <entry file="file://$PROJECT_DIR$/src/expertSystem/File_Predicates.java" />
     <entry file="file://$PROJECT_DIR$/src/expertSystem/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/expertSystem/Node.java" />
-    <entry file="file://$PROJECT_DIR$/src/expertSystem/TDA_Index.java" />
     <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/predicates.java" />
     <entry file="file://$PROJECT_DIR$/src/expertSystem/fxml/mainView.fxml" />
     <entry file="file://$PROJECT_DIR$/FactsBase" />
@@ -709,16 +679,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/domains.java" />
     <entry file="file://$PROJECT_DIR$/src/expertSystem/fxml/actsBase.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/knowledgeBase.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/event/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="338" selection-start-line="338" selection-end-line="338" />
+        <state relative-caret-position="2720">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
+          <folding>
+            <element signature="e#3304#3305#0" expanded="true" />
+            <element signature="e#3336#3337#0" expanded="true" />
+            <element signature="e#4362#4363#0" expanded="true" />
+            <element signature="e#4393#4394#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
+        <state relative-caret-position="130475">
           <caret line="8411" selection-start-line="8411" selection-end-line="8411" />
           <folding>
             <element signature="e#40494#40495#0" expanded="true" />
@@ -733,21 +709,29 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
+        <state relative-caret-position="2278">
           <caret line="186" selection-start-line="186" selection-end-line="186" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/event/Event.java">
+    <entry file="file://$PROJECT_DIR$/src/expertSystem/encadenamiento.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="197" selection-start-line="197" selection-end-line="197" />
-          <folding>
-            <element signature="e#3304#3305#0" expanded="true" />
-            <element signature="e#3336#3337#0" expanded="true" />
-            <element signature="e#4362#4363#0" expanded="true" />
-            <element signature="e#4393#4394#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/expertSystem/File_Index.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/expertSystem/TDA_KnowledgeBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -761,45 +745,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/expertSystem/encadenamiento.java">
+    <entry file="file://$PROJECT_DIR$/src/expertSystem/TDA_Index.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        <state relative-caret-position="306">
+          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/expertSystem/TDA_KnowledgeBase.java">
+    <entry file="file://$PROJECT_DIR$/src/expertSystem/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/expertSystem/Tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="81" column="35" lean-forward="true" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/expertSystem/File_Index.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+        <state relative-caret-position="145">
+          <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/expertSystem/File_MasterKnowledgeBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+        <state relative-caret-position="442">
+          <caret line="133" column="39" lean-forward="true" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/knowledgeBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="89" column="52" selection-start-line="84" selection-start-column="50" selection-end-line="89" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/mainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/expertSystem/controller/actsBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="118" column="79" selection-start-line="118" selection-start-column="79" selection-end-line="118" selection-end-column="79" />
+        <state relative-caret-position="-485">
+          <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
