@@ -1,14 +1,26 @@
 p
-
+fdf
 e
 18,19,20,21,22,23,24,25
 pn
-
+pensamientos no deseados, recurrentes, intrusivos, imágenes no deseas, desagradables, inapropiadas o angustiosas.
 t
-
+Cuando miro desde un lugar alto (como una ventana o un balcón o un puente) siento como el impulso de tirarme., Cuando se acerca un tren pienso si no podría tirarme bajo las ruedas., Cuando conduzco siento el impulso de dirigir el coche contra alguien o contra algo., Necesito a veces romper cosas o dañarlas sin ningún motivo., A veces tengo el impulso de hurtar algo de otro aunque no lo necesite., Cuando voy al supermercado siento la tentación de llevarme algo., Tengo la necesidad a veces de caminar de cierta manera o hacer ciertos gestos.
 o
-
+obsesión
 c
-
+compulsión
+tc
+Siento mis manos sucias cuando toco dinero., Creo que el menor contacto con mis secreciones (transpiración o saliva o orina o etc...) puede contaminar mis ropas., Me resulta difícil tocar algún objeto cuando sé que ha sido tocado por extraños o por determinadas personas., Me cuesta tocar desperdicios o cosas sucias., Evito usar baños públicos por temor a contagiarme o enfermar., Evito usar teléfonos públicos por temor a contagiarme o enfermar., Me lavo las manos más veces y por más tiempo de lo necesario., A veces tengo que lavarme porque pienso que estoy sucio o contaminado., Si toco algo que pienso que está «contaminado» tengo que lavarme o limpiarme inmediatamente.  Si un animal me toca o me roza o me siento sucio y tengo que lavarme y cambiarme de ropa inmediatamente., Me invento preocupaciones sin sentido sobre posibles enfermedades o gérmenes.
 d
-
+Tengo que hacer las cosas varias veces para asegurarme de que están bien hechas., Tiendo a controlar las cosas con más frecuencia de lo necesario., Controlo las llaves de gas o las luces varias veces cuando las cierro o apago., He tenido que volver a mi casa (u oficina) para asegurarme de que las puertas o ventanas (o luces o llaves o etc...) quedaron  cerradas., Leo y releo las planillas o documentos o cheques o etc... una y otra vez para estar seguro de que están bien hechos., Tengo que controlar si los fósforos o colillas o quedaron bien apagados., Cuando manejo dinero lo cuento y recuento una y otra vez., Controlo las cartas varias veces antes de enviarlas al correo.
+co
+Revisar y volver a revisar las llaves del agua y del gas (constantemente)., Vuelvo a casa a revisar las puertas cajones etc..., Revisar formularios documentos cheques etc... cuidadosamente para estar seguro que los he rellenado correctamente., Revisar que los cigarros fósforos estén bien apagados., Reviso las cartas cuidadosamente antes de echarlas al correo, Evito usar baños públicos porque tengo miedo a las enfermedades y a la contaminación., Evito usar teléfonos públicos porque tengo miedo de las infecciones y de las enfermedades., Me lavo las manos con mayor frecuencia durante más tiempo del necesario., Tengo que lavarme simplemente porque pienso que puede estar sucio o contaminado., Si toco algo que creo que esta contaminado inmediatamente tengo que lavarme., Si un animal me toca me siento sucio y tengo que lavarme inmediatamente o cambiarme de ropa, Paso mucho tiempo haciendo determinada cosa (Repito una y otra vez la misma actividad).
+cr
+Trabajo, Escuela, Pareja, Familia, Amigos
+f
+Antecedentes familiares (familiares con el trastorno)., Acontecimientos estresantes de la vida (eventos traumáticos o estresantes)., Otros trastornos de salud mental
+w
+Problemas con el estrés (Laboral o social o escolar)., Problemas economicos, Problemas familiares, Problemas sociales, Duelo no superado de ser querido.
+s
+Drogas cocacína, Traquilizantes, Éxtasis, Heroína, Anfetaminas, LSD, Otras sustancias químicas como ansiolíticos, Otras sustancias que atenran los sentidos 

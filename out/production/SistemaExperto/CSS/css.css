@@ -1,7 +1,7 @@
 
 .jfx-text-field{
-    -fx-text-fill: white;
-    -fx-prompt-text-fill: white;
+    -fx-text-fill: #FF3535;
+    -fx-prompt-text-fill: #FF3535;
 }
 .table-view {
     -fx-base: #4682B4;

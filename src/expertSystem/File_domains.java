@@ -3,7 +3,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.io.*;
 /**
- * Clase File_domains para realizar la escritura, lectura y busqueda de dominios en el archivo domains.txt hereda de File
+ * Clase File_domains para realizar la escritura, lectura y busqueda de dominios en el archivo domains.txt
+ * hereda de File
  *
  */
 

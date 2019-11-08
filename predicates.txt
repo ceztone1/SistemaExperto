@@ -4,7 +4,15 @@ pensamientos(p,pn)
 p tiene pensamientos pn
 sintomas(t)
 t son sintomas de tabues
-sintomas(c)
+sintomas(tc)
 c son sintomas de temor a contaminación
 sintomas(d)
 d son sintomas de dudas
+compulsion(co)
+co son compulsiones comunes
+consume(p,s)
+p consume s
+antecedentes(f)
+f son antecedentes 
+dificultades(p,w)
+p tiene dificultades w

@@ -6,17 +6,39 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import com.jfoenix.controls.JFXScrollPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="expertSystem.controller.actsBase"
             >
 <top>
     <HBox alignment="CENTER_LEFT" spacing="10">
-        <Label maxWidth="1500" prefWidth="1500" style="-fx-background-color: #ADCAF2; -fx-font-size: 15pt; -fx-text-fill:#FFFFFF; -fx-font-weight:bold;" text="Acts Base" />
+        <Label maxWidth="1600" prefWidth="1500" style="-fx-background-color: #ADCAF2; -fx-font-size: 20pt; -fx-text-fill:#FFFFFF; -fx-font-weight:bold;" text="Facts Base" />
     </HBox>
 
 </top>
     <center>
-        <VBox fx:id="vbox" spacing="5" BorderPane.alignment="CENTER"></VBox>
+            <ScrollPane style="-fx-background-color: #43B0F7;" prefHeight="800">
+
+            <VBox spacing="6"  alignment="CENTER" prefWidth="1350">
+                <Label  textAlignment="CENTER"  text="Responda" maxWidth="1000" alignment="CENTER" prefWidth="1500" style="-fx-background-color: #80F49C; -fx-font-size: 15pt; -fx-text-fill:#FFFFFF; -fx-font-weight:bold;"/>
+                <Label text="Campos obligatorios *" style="-fx-background-color: #80F49C; -fx-font-size: 10pt; -fx-text-fill:#FFFFFF; -fx-font-weight:bold;"></Label>
+                <JFXTextField fx:id="txtName"  prefHeight="30.0" prefWidth="286.0" promptText="Nombre" style="-jfx-unfocus-color: white;" />
+                <JFXButton fx:id="btnNa" text="Agregar hecho" alignment="CENTER" prefHeight="30" prefWidth="150" style="-fx-background-color: #80F49C;"></JFXButton>
+                <VBox fx:id="vbox" spacing="5" alignment="CENTER" prefWidth="1350">
+
+                </VBox>
+                <JFXButton fx:id="btnIn" text="Infer" visible="false" alignment="CENTER" prefHeight="30" prefWidth="150" style="-fx-background-color: #80F49C;"></JFXButton>
+
+            </VBox>
+            </ScrollPane>
+
     </center>
+    <right>
+        <JFXListView fx:id="fBase"></JFXListView>
+    </right>
 </BorderPane>

@@ -177,6 +177,7 @@ public class knowledgeBase implements Initializable {
     public boolean validForm(String clause) //Metodo que asegura que la premisa tenga parentesis y domino
     {
         int c=0;
+        System.out.println("clause    "+clause);
         for (int i = 0; i < clause.length(); i++) {
             if(clause.charAt(i)=='(') {
                 c++;
@@ -203,12 +204,13 @@ public class knowledgeBase implements Initializable {
               if (c.length==2){
                   l[0]=c[0];
                   l[6]=c[1];
-                  return (validForm(l[0])&&validForm(l[1])?l:null);
+                  return (validForm(l[0])&&validForm(l[6])?l:null);
               }
           }
         }
         else
         {
+           // a=clause.split("→");
            if(a.length>=2){
                int k=0;
                while(k<(a.length-1) && ban){
